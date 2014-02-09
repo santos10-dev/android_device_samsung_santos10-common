@@ -51,6 +51,9 @@ on post-fs
     chown compass root /sys/class/input/input6/dynamic_matrix
     chown compass root /sys/class/input/input6/offsets
 
+    # ir
+    chown system system /sys/class/sec/sec_ir/ir_send
+
 on post-fs-data
     # Bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
