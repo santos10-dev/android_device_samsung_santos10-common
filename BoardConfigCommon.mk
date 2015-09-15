@@ -29,6 +29,8 @@ TARGET_KERNEL_CONFIG := twrp_santos10_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := bzImage
 
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/santos10-common/custombootimg.mk
+
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
