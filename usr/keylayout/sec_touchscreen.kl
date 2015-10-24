@@ -1,0 +1,8 @@
+key 560   PDCT
+key 158   BACK              WAKE_DROPPED
+key 139   MENU              WAKE_DROPPED
+key 249   DUMMY_HOME1        WAKE_DROPPED
+key 250   DUMMY_HOME2        WAKE_DROPPED
+key 251   DUMMY_MENU        WAKE_DROPPED
+key 252   DUMMY_HOME        WAKE_DROPPED
+key 253   DUMMY_BACK        WAKE_DROPPED

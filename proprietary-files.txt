@@ -1,0 +1,29 @@
+###### BINARIES ######
+
+# OpenGL
+vendor/lib/libglslcompiler.so
+vendor/lib/libIMGegl.so
+vendor/lib/liboclcompiler.so
+vendor/lib/libpvrANDROID_WSEGL.so
+vendor/lib/libPVROCL.so
+vendor/lib/libsrv_init.so
+vendor/lib/libsrv_um.so
+vendor/lib/libusc.so
+vendor/lib/egl/libEGL_POWERVR_SGX544_115.so
+vendor/lib/egl/libGLESv1_CM_POWERVR_SGX544_115.so
+vendor/lib/egl/libGLESv2_POWERVR_SGX544_115.so
+
+# gralloc
+vendor/lib/hw/gralloc.clovertrail.so
+
+# hwcomposer
+lib/libmultidisplay.so:vendor/lib/libmultidisplay.so
+lib/libsepdrm.so:vendor/lib/libsepdrm.so
+
+# Video dependencies
+lib/libcorkscrew.so:vendor/lib/libcorkscrew.so
+lib/libva.so:vendor/lib/libva.so
+lib/libva-android.so:vendor/lib/libva-android.so
+lib/libva-tpi.so:vendor/lib/libva-tpi.so
+vendor/lib/libpvr2d.so
+lib/libwsbm.so:vendor/lib/libwsbm.so
