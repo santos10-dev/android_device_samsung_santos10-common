@@ -48,6 +48,9 @@ lib/hw/sensors.default.so:vendor/lib/hw/sensors.santos10.so
 # Audio
 etc/firmware/fw_sst_08e7.bin:vendor/firmware/fw_sst_08e7.bin
 
+# Multimedia
+etc/firmware/topazsc_fw.bin:vendor/firmware/topazsc_fw.bin
+
 # Wifi
 etc/wifi/bcmdhd_sta.bin_b2:vendor/firmware/bcmdhd_sta.bin_b2
 etc/wifi/bcmdhd_apsta.bin_b2:vendor/firmware/bcmdhd_apsta.bin_b2

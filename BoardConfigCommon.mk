@@ -24,6 +24,7 @@ TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 
 # Specific headers
 TARGET_BOARD_KERNEL_HEADERS := device/samsung/santos10-common/kernel-headers
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/santos10-common/include
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/santos10
@@ -45,6 +46,14 @@ BOARD_FLASH_BLOCK_SIZE := 1024
 
 # Video
 ENABLE_IMG_GRAPHICS := true
+
+# Multimedia
+BUILD_WITH_FULL_STAGEFRIGHT := true
+BOARD_USES_WRS_OMXIL_CORE := true
+INTEL_VA := true
+BOARD_USES_MRST_OMX := true
+
+COMMON_GLOBAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd

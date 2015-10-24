@@ -50,11 +50,32 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Multimedia
+PRODUCT_PACKAGES += \
+    libstagefrighthw \
+    \
+    libwrs_omxil_common \
+    libwrs_omxil_core_pvwrapped \
+    \
+    libmixvbp \
+    libmixvbp_h264 \
+    libmixvbp_mpeg4 \
+    \
+    libva_videodecoder \
+    libva_videoencoder \
+    \
+    libOMXVideoDecoderAVC \
+    libOMXVideoDecoderH263 \
+    libOMXVideoDecoderMPEG4 \
+    libOMXVideoEncoderAVC \
+    \
+    pvr_drv_video
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/configs/wrs_omxil_components.list:system/etc/wrs_omxil_components.list
 
 # Wifi
 PRODUCT_PACKAGES += \
