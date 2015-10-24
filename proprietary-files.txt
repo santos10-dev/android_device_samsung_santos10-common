@@ -34,3 +34,6 @@ lib/libwsbm.so:vendor/lib/libwsbm.so
 etc/wifi/bcmdhd_sta.bin_b2:vendor/firmware/bcmdhd_sta.bin_b2
 etc/wifi/bcmdhd_apsta.bin_b2:vendor/firmware/bcmdhd_apsta.bin_b2
 etc/wifi/nvram_net.txt:vendor/firmware/nvram_net.txt
+
+# Bluetooth
+vendor/firmware/bcm4334.hcd:vendor/firmware/bcm4334.hcd

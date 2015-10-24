@@ -1,2 +1,5 @@
 # IMG Graphics
 /dev/pvr_sync                           0666   system     system
+
+# Bluetooth
+/dev/ttyMFD0                            0660   bluetooth  net_bt_stack
