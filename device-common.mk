@@ -28,6 +28,9 @@ PRODUCT_PACKAGES += \
     libgccdemangle \
     pvrsrvctl
 
+PRODUCT_PACKAGES += \
+    libwsbm
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160 \
     \
