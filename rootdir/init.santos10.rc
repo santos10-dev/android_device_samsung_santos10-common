@@ -32,6 +32,7 @@ on init
 
 on fs
     mkdir /logs 0770 system log
+    mkdir /efs 0775 radio system
 
     mount_all /fstab.santos10
 
