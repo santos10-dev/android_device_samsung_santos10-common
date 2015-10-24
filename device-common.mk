@@ -31,6 +31,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     \
     ro.opengles.version=131072
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf \
+    $(LOCAL_PATH)/configs/tinyucm.conf:system/etc/tinyucm.conf \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
