@@ -22,6 +22,9 @@ TARGET_CPU_ABI := x86
 TARGET_BOARD_PLATFORM := clovertrail
 TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 
+# Specific headers
+TARGET_BOARD_KERNEL_HEADERS := device/samsung/santos10-common/kernel-headers
+
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/santos10
 TARGET_KERNEL_CONFIG := cyanogenmod_santos10_defconfig
@@ -39,6 +42,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12654198784 # 12654215168 - 16384
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 367001600
 
 BOARD_FLASH_BLOCK_SIZE := 1024
+
+# Video
+ENABLE_IMG_GRAPHICS := true
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd

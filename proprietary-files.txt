@@ -26,7 +26,6 @@ lib/libva.so:vendor/lib/libva.so
 lib/libva-android.so:vendor/lib/libva-android.so
 lib/libva-tpi.so:vendor/lib/libva-tpi.so
 vendor/lib/libpvr2d.so
-lib/libwsbm.so:vendor/lib/libwsbm.so
 
 # Audio
 lib/hw/audio.primary.clovertrail.so:vendor/lib/hw/audio.primary.clovertrail.so
