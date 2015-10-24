@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
     pvrsrvctl
 
 PRODUCT_PACKAGES += \
+    libcorkscrew \
     libva \
     libva-android \
     libva-tpi \

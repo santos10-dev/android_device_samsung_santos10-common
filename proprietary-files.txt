@@ -21,7 +21,6 @@ lib/libmultidisplay.so:vendor/lib/libmultidisplay.so
 lib/libsepdrm.so:vendor/lib/libsepdrm.so
 
 # Video dependencies
-lib/libcorkscrew.so:vendor/lib/libcorkscrew.so
 vendor/lib/libpvr2d.so
 
 # Audio
