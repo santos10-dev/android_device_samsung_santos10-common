@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+import init.santos10.usb.rc
+
 on early-init
     # IMG Graphics
     symlink /dev/dri/card0 /dev/card0
