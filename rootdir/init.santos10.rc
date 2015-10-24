@@ -37,6 +37,9 @@ on fs
     mount_all /fstab.santos10
 
 on post-fs
+    # screen backlight
+    chown system system /sys/class/backlight/panel/brightness
+
     # geomagnetic
     chown root input /sys/class/input/input5/enable
     chown root input /sys/class/input/input5/poll_delay
