@@ -24,6 +24,9 @@ PRODUCT_PACKAGES += \
     libgccdemangle \
     pvrsrvctl
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=160
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/idc/sec_keyboard.idc:system/usr/idc/sec_keyboard.idc \
