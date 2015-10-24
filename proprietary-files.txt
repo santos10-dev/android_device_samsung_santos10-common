@@ -32,4 +32,5 @@ lib/libwsbm.so:vendor/lib/libwsbm.so
 
 # Wifi
 etc/wifi/bcmdhd_sta.bin_b2:vendor/firmware/bcmdhd_sta.bin_b2
+etc/wifi/bcmdhd_apsta.bin_b2:vendor/firmware/bcmdhd_apsta.bin_b2
 etc/wifi/nvram_net.txt:vendor/firmware/nvram_net.txt
