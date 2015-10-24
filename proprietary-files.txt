@@ -38,6 +38,9 @@ lib/lib_Samsung_SB_AM_V04005_20130729.so:vendor/lib/lib_Samsung_SB_AM_V04005_201
 lib/libsecril-client.so:vendor/lib/libsecril-client.so
 lib/libtinyalsa.so:vendor/lib/libtinyalsa.so
 
+# Multimedia
+lib/pvr_drv_video.so:lib/pvr_drv_video.so
+
 # Sensors
 bin/geomagneticd:vendor/bin/geomagneticd
 bin/orientationd:vendor/bin/orientationd
@@ -47,6 +50,9 @@ lib/hw/sensors.default.so:vendor/lib/hw/sensors.santos10.so
 
 # Audio
 etc/firmware/fw_sst_08e7.bin:vendor/firmware/fw_sst_08e7.bin
+
+# Multimedia
+etc/firmware/topazsc_fw.bin:vendor/firmware/topazsc_fw.bin
 
 # Wifi
 etc/wifi/bcmdhd_sta.bin_b2:vendor/firmware/bcmdhd_sta.bin_b2
