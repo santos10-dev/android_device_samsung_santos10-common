@@ -36,6 +36,15 @@ on fs
 
     mount_all /fstab.santos10
 
+on post-fs
+    # geomagnetic
+    chown root input /sys/class/input/input5/enable
+    chown root input /sys/class/input/input5/poll_delay
+
+    # geomagnetic_raw
+    chown compass root /sys/class/input/input6/dynamic_matrix
+    chown compass root /sys/class/input/input6/offsets
+
 on post-fs-data
     # Bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -111,3 +120,16 @@ service pvrsrvrtl /system/bin/pvrsrvctl
     class core
     oneshot
     user root
+
+# Sensors
+service geomagneticd /system/vendor/bin/geomagneticd
+    class main
+    user compass
+    group system input
+    seclabel u:r:geomagneticd:s0
+
+service orientationd /system/vendor/bin/orientationd
+    class main
+    user compass
+    group input
+    seclabel u:r:orientationd:s0

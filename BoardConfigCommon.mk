@@ -61,5 +61,8 @@ BOARD_BLUEDROID_VENDOR_CONF := device/samsung/santos10-common/bluetooth/vnd_sant
 # OpenGL
 USE_OPENGL_RENDERER := true
 
+# Security
+BOARD_SEPOLICY_DIRS += device/samsung/santos10-common/sepolicy
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/fstab.santos10
