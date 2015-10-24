@@ -26,6 +26,10 @@ on init
     # Marshmallow compatibility library
     export LD_PRELOAD "/system/lib/libmmcompat.so"
 
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
+
 on fs
     mkdir /logs 0770 system log
 
