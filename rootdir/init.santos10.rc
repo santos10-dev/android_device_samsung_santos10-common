@@ -17,6 +17,8 @@
 import init.santos10.usb.rc
 
 on early-init
+    mount debugfs debugfs /sys/kernel/debug mode=0755
+
     # IMG Graphics
     symlink /dev/dri/card0 /dev/card0
 
@@ -25,6 +27,8 @@ on init
     export LD_SHIM_LIBS /system/vendor/lib/libsepdrm.so|libshim_drm.so
 
 on fs
+    mkdir /logs 0770 system log
+
     mount_all /fstab.santos10
 
 on post-fs-data
