@@ -27,6 +27,9 @@ PRODUCT_PACKAGES += \
     pvrsrvctl
 
 PRODUCT_PACKAGES += \
+    libva \
+    libva-android \
+    libva-tpi \
     libwsbm
 
 PRODUCT_PROPERTY_OVERRIDES += \
