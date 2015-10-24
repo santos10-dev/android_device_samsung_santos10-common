@@ -26,6 +26,10 @@ on init
     # Shims
     export LD_SHIM_LIBS /system/vendor/lib/libsepdrm.so|libshim_drm.so
 
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
+
 on fs
     mkdir /logs 0770 system log
 
