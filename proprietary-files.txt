@@ -28,6 +28,11 @@ lib/libva-tpi.so:vendor/lib/libva-tpi.so
 vendor/lib/libpvr2d.so
 lib/libwsbm.so:vendor/lib/libwsbm.so
 
+# Sensors
+bin/geomagneticd:vendor/bin/geomagneticd
+bin/orientationd:vendor/bin/orientationd
+lib/hw/sensors.default.so:vendor/lib/hw/sensors.santos10.so
+
 ###### FIRMWARES ######
 
 # Wifi

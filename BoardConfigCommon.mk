@@ -62,5 +62,8 @@ USE_OPENGL_RENDERER := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
+# Security
+BOARD_SEPOLICY_DIRS += device/samsung/santos10-common/sepolicy
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/fstab.santos10
