@@ -27,3 +27,9 @@ lib/libva-android.so:vendor/lib/libva-android.so
 lib/libva-tpi.so:vendor/lib/libva-tpi.so
 vendor/lib/libpvr2d.so
 lib/libwsbm.so:vendor/lib/libwsbm.so
+
+###### FIRMWARES ######
+
+# Wifi
+etc/wifi/bcmdhd_sta.bin_b2:vendor/firmware/bcmdhd_sta.bin_b2
+etc/wifi/nvram_net.txt:vendor/firmware/nvram_net.txt

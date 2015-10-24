@@ -41,6 +41,15 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 367001600
 
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Wifi
+BOARD_WLAN_DEVICE                := bcmdhd
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/dhd.ko"
+WIFI_DRIVER_MODULE_NAME          := "dhd"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/bcmdhd_sta.bin nvram_path=/vendor/firmware/nvram_net.txt"
+
 # OpenGL
 USE_OPENGL_RENDERER := true
 
