@@ -27,7 +27,9 @@ PRODUCT_PACKAGES += \
     pvrsrvctl
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=160
+    ro.sf.lcd_density=160 \
+    \
+    ro.opengles.version=131072
 
 # Keylayout
 PRODUCT_COPY_FILES += \
