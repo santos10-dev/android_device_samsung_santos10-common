@@ -49,6 +49,10 @@ bin/geomagneticd:vendor/bin/geomagneticd
 bin/orientationd:vendor/bin/orientationd
 lib/hw/sensors.default.so:vendor/lib/hw/sensors.santos10.so
 
+# HW keystore
+lib/hw/keystore.clovertrail.so:vendor/lib/hw/keystore.clovertrail.so
+lib/libsepkeymaster.so:vendor/lib/libsepkeymaster.so
+
 ###### FIRMWARES ######
 
 # Audio
