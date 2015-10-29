@@ -16,6 +16,9 @@ vendor/lib/egl/libGLESv2_POWERVR_SGX544_115.so
 # gralloc
 vendor/lib/hw/gralloc.clovertrail.so
 
+# memtrack
+vendor/lib/hw/memtrack.clovertrail.so
+
 # hwcomposer
 lib/libmultidisplay.so:vendor/lib/libmultidisplay.so
 lib/libsepdrm.so:vendor/lib/libsepdrm.so
