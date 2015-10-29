@@ -77,5 +77,8 @@ USE_OPENGL_RENDERER := true
 # Security
 BOARD_SEPOLICY_DIRS += device/samsung/santos10-common/sepolicy
 
+# Charger mode
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/fstab.santos10

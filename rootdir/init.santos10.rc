@@ -146,3 +146,9 @@ service orientationd /system/vendor/bin/orientationd
     user compass
     group input
     seclabel u:r:orientationd:s0
+
+# Charger mode
+service charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
