@@ -18,6 +18,10 @@ LOCAL_PATH := device/samsung/santos10-common
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bootanimation-580-256col.zip:system/media/bootanimation.zip
+
 # Marshmallow compatibility library
 PRODUCT_PACKAGES += \
     libmmcompat
