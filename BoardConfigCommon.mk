@@ -80,5 +80,8 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 # Security
 BOARD_SEPOLICY_DIRS += device/samsung/santos10-common/sepolicy
 
+# Charger mode
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/fstab.santos10

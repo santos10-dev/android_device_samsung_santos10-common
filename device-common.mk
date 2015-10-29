@@ -112,6 +112,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.santos10.rc:root/ueventd.santos10.rc \
     $(LOCAL_PATH)/rootdir/fstab.santos10:root/fstab.santos10
 
+# Charger mode
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
