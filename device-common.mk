@@ -77,6 +77,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/configs/wrs_omxil_components.list:system/etc/wrs_omxil_components.list
 
+# Power
+PRODUCT_PACKAGES += \
+    power.santos10
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
