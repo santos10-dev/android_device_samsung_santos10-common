@@ -26,6 +26,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libmmcompat
 
+# Houdini
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.dalvik.vm.native.bridge=libhoudini.so
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.dalvik.vm.isa.arm=x86 \
+    ro.enable.native.bridge.exec=1
+
 # Video
 PRODUCT_PACKAGES += \
     libdrm \
