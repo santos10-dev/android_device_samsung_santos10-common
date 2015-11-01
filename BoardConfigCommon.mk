@@ -44,6 +44,13 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 367001600
 
 BOARD_FLASH_BLOCK_SIZE := 1024
 
+# Dexopt
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+  endif
+endif
+
 # Video
 ENABLE_IMG_GRAPHICS := true
 
