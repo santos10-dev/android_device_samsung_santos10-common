@@ -23,3 +23,17 @@ LOCAL_MODULE := libshim_drm
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+# GPS
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    gui/SensorManager.cpp \
+    crypto.c
+
+LOCAL_SHARED_LIBRARIES := liblog libcutils libgui libbinder libutils
+LOCAL_MODULE := libshim_gps
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
