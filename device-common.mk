@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderH263 \
     libOMXVideoDecoderMPEG4 \
     libOMXVideoDecoderWMV \
-    libOMXVideoEncoderAVC
+    libOMXVideoEncoderAVC \
+    pvr_drv_video
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
