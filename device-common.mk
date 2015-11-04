@@ -77,6 +77,16 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/configs/wrs_omxil_components.list:system/etc/wrs_omxil_components.list
 
+# Camera
+PRODUCT_PACKAGES += \
+    libshim_camera \
+    \
+    camera.santos10
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/camera_profiles.xml:system/etc/camera_profiles.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 # Power
 PRODUCT_PACKAGES += \
     power.santos10

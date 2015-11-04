@@ -6,3 +6,8 @@
 
 # GPS
 /dev/ttyMFD1                            0660   system     system
+
+# Camera
+/dev/video*                             0660   root       camera
+/dev/v4l-subdev*                        0660   root       camera
+/dev/media*                             0660   root       camera
