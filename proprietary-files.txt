@@ -26,6 +26,15 @@ lib/libsepdrm.so:vendor/lib/libsepdrm.so
 # Video dependencies
 vendor/lib/libpvr2d.so
 
+# Camera
+lib/libia_aiq.so:vendor/lib/libia_aiq.so
+lib/libia_aiq_cp.so:vendor/lib/libia_aiq_cp.so
+lib/libia_mkn.so:vendor/lib/libia_mkn.so
+lib/libia_nvm.so:vendor/lib/libia_nvm.so
+lib/libmfldadvci.so:vendor/lib/libmfldadvci.so
+lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
+lib/libtbd.so:vendor/lib/libtbd.so
+
 # Audio
 lib/hw/audio.primary.clovertrail.so:vendor/lib/hw/audio.primary.clovertrail.so
 lib/libaudio-ril.so:vendor/lib/libaudio-ril.so
@@ -59,8 +68,10 @@ etc/firmware/fw_sst_08e7.bin:vendor/firmware/fw_sst_08e7.bin
 etc/firmware/topazsc_fw.bin:vendor/firmware/topazsc_fw.bin
 
 # Camera
-etc/firmware/isp_fr.bin:vendor/firmware/isp_fr.bin
 etc/firmware/shisp_css15.bin:vendor/firmware/shisp_css15.bin
+etc/firmware/isp_fr.bin:etc/firmware/isp_fr.bin
+cameradata/datapattern_420sp.yuv:cameradata/datapattern_420sp.yuv
+cameradata/datapattern_front_420sp.yuv:cameradata/datapattern_front_420sp.yuv
 
 # Wifi
 etc/wifi/bcmdhd_sta.bin_b2:vendor/firmware/bcmdhd_sta.bin_b2
