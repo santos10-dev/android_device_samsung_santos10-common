@@ -22,6 +22,13 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bootanimation-580-256col.zip:system/media/bootanimation.zip
 
+# ART optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=174m \
+    dalvik.vm.heapmaxfree=8m
+
 # Marshmallow compatibility library
 PRODUCT_PACKAGES += \
     libmmcompat
