@@ -28,6 +28,9 @@ on early-init
     # Use multistream for ZRAM
     write /sys/block/zram0/max_comp_streams 4
 
+    # Set swappiness
+    write /proc/sys/vm/swappiness 100
+
 on init
     # Shims
     export LD_SHIM_LIBS /system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
