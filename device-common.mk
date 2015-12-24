@@ -112,6 +112,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
 
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.santos10
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.santos10

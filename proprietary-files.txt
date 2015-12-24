@@ -53,7 +53,6 @@ lib/libtinyalsa.so:vendor/lib/libtinyalsa.so
 # Sensors
 bin/geomagneticd:vendor/bin/geomagneticd
 bin/orientationd:vendor/bin/orientationd
-lib/hw/sensors.default.so:vendor/lib/hw/sensors.santos10.so
 
 ###### FIRMWARES ######
 
