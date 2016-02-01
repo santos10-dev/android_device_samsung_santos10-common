@@ -56,6 +56,7 @@ endif
 
 # Video
 ENABLE_IMG_GRAPHICS := true
+TARGET_DISABLE_CURSOR_LAYER := true
 
 # Multimedia
 BUILD_WITH_FULL_STAGEFRIGHT := true
