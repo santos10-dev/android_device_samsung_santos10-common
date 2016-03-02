@@ -100,7 +100,6 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf \
     hostapd
