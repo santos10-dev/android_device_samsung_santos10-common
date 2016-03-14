@@ -83,6 +83,9 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/santos10-common/bluetooth/vnd_santos10.txt
 
+# CMHW
+BOARD_HARDWARE_CLASS += device/samsung/santos10-common/cmhw
+
 # OpenGL
 USE_OPENGL_RENDERER := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true

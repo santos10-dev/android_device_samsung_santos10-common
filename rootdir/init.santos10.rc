@@ -64,6 +64,9 @@ on post-fs
     # ir
     chown system system /sys/class/sec/sec_ir/ir_send
 
+    # key disabler
+    chown system system /sys/class/sec/sec_touchkey/keypad_enable
+
     # cpufreq interactive
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
 
