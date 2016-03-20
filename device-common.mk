@@ -25,6 +25,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=174m \
     dalvik.vm.heapmaxfree=8m
 
+# Houdini
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.dalvik.vm.native.bridge=libhoudini.so
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.dalvik.vm.isa.arm=x86 \
+    ro.enable.native.bridge.exec=1
+
 # Video
 PRODUCT_PACKAGES += \
     libshim_drm \
