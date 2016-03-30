@@ -82,6 +82,7 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/bcmdhd_sta.bin nvram_path=/vendor/firmware/nvram_net.txt"
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/vendor/firmware/bcmdhd_apsta.bin nvram_path=/vendor/firmware/nvram_net.txt"
+BOARD_HAVE_SAMSUNG_WIFI          := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
