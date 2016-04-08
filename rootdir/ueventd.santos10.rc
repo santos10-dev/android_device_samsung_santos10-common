@@ -11,3 +11,9 @@
 /dev/video*                             0660   root       camera
 /dev/v4l-subdev*                        0660   root       camera
 /dev/media*                             0660   root       camera
+
+# RIL
+/dev/umts_boot0                         0660   radio      radio
+/dev/umts_ipc0                          0660   radio      radio
+/dev/umts_rfs0                          0660   radio      radio
+/dev/block/mmcblk0p12                   0660   radio      radio

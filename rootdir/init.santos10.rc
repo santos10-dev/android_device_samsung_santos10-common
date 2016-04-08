@@ -39,6 +39,9 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
+    # Symlink for modem binary path
+    symlink /dev/block/mmcblk0p12 /dev/mbin0
+
 on fs
     mkdir /logs 0770 system log
     mkdir /efs 0775 radio system
@@ -70,6 +73,8 @@ on post-fs
     # cpufreq interactive
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
 
+    start cpboot-daemon
+
 on post-fs-data
     # Insert HDMI driver
     insmod /system/lib/modules/hdmi_audio.ko
@@ -97,6 +102,13 @@ on post-fs-data
     mkdir /data/system/gps 0771 system system
 
     setprop vold.post_fs_data_done 1
+
+# RIL
+service cpboot-daemon /system/vendor/bin/cbd -d
+    class main
+    user root
+    group radio cache inet misc audio sdcard_rw log sdcard_r
+    disabled
 
 # Wifi
 on property:init.svc.wpa_supplicant=stopped

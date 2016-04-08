@@ -52,6 +52,9 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 367001600
 
 BOARD_FLASH_BLOCK_SIZE := 1024
 
+# Use samsung specific code
+BOARD_VENDOR := samsung
+
 # Dexopt
 ifeq ($(HOST_OS),linux)
   ifeq ($(WITH_DEXPREOPT),)
@@ -96,6 +99,11 @@ BOARD_HARDWARE_CLASS += device/samsung/santos10-common/cmhw
 USE_OPENGL_RENDERER := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
+
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+BOARD_MODEM_TYPE := xmm7260
+BOARD_RIL_CLASS := ../../../device/samsung/santos10-common/ril
 
 # Security
 BOARD_SEPOLICY_DIRS += device/samsung/santos10-common/sepolicy
