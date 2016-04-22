@@ -73,6 +73,12 @@ on post-fs
     # cpufreq interactive
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
 
+    # Tune interactive governor parameters
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 100000
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 100000
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 80
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1333000
+
     start cpboot-daemon
 
 on post-fs-data
