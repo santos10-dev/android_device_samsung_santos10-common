@@ -79,6 +79,12 @@ on post-fs
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 80
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1333000
 
+    # Tune cpusets parameters
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-1
+
     start cpboot-daemon
 
 on post-fs-data
