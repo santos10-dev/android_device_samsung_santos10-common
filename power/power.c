@@ -148,6 +148,8 @@ static void fugu_power_hint(struct power_module *module, power_hint_t hint, void
 
     switch (hint) {
         case POWER_HINT_INTERACTION:
+        case POWER_HINT_CPU_BOOST:
+        case POWER_HINT_LAUNCH_BOOST:
             clock_gettime(CLOCK_MONOTONIC, &curr_time);
             timespec_sub(&diff_time, &curr_time, &mod->last_boost_time);
             diff = timespec_to_us(&diff_time);
