@@ -17,6 +17,7 @@
 
 #include <errno.h>
 #include <fcntl.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
@@ -29,6 +30,8 @@
 #include <hardware/hardware.h>
 #include <hardware/power.h>
 
+#include "power.h"
+
 #define BOOST_PULSE_SYSFS    "/sys/devices/system/cpu/cpufreq/interactive/boostpulse"
 #define BOOST_FREQ_SYSFS     "/sys/devices/system/cpu/cpufreq/interactive/hispeed_freq"
 #define BOOST_DURATION_SYSFS "/sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration"
@@ -38,6 +41,12 @@ struct intel_power_module {
     uint32_t pulse_duration;
     struct timespec last_boost_time; /* latest POWER_HINT_INTERACTION boost */
 };
+
+#define CPUFREQ_PATH "/sys/devices/system/cpu/cpu0/cpufreq/"
+#define INTERACTIVE_PATH "/sys/devices/system/cpu/cpufreq/interactive/"
+
+static pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+static int current_power_profile = -1;
 
 static ssize_t sysfs_write(char *path, char *s)
 {
@@ -60,6 +69,13 @@ static ssize_t sysfs_write(char *path, char *s)
     ALOGV("wrote '%s' to %s", s, path);
 
     return len;
+}
+
+static int sysfs_write_int(char *path, int value)
+{
+    char buf[80];
+    snprintf(buf, 80, "%d", value);
+    return sysfs_write(path, buf);
 }
 
 static ssize_t sysfs_read(char *path, char *s, int num_bytes)
@@ -137,6 +153,52 @@ static inline uint64_t timespec_to_us(struct timespec *t)
     return t->tv_sec * 1000000 + t->tv_nsec / 1000;
 }
 
+static bool check_governor(void)
+{
+    struct stat s;
+    int err = stat(INTERACTIVE_PATH, &s);
+    if (err != 0) return false;
+    if (S_ISDIR(s.st_mode)) return true;
+    return false;
+}
+
+static int is_profile_valid(int profile)
+{
+    return profile >= 0 && profile < PROFILE_MAX;
+}
+
+static void set_power_profile(int profile) {
+    if (!is_profile_valid(profile)) {
+        ALOGE("%s: unknown profile: %d", __func__, profile);
+        return;
+    }
+
+    if (profile == current_power_profile)
+        return;
+
+    // break out early if governor is not interactive
+    if (!check_governor()) return;
+
+    sysfs_write_int(INTERACTIVE_PATH "boost",
+                    profiles[profile].boost);
+    sysfs_write_int(INTERACTIVE_PATH "boostpulse_duration",
+                    profiles[profile].boostpulse_duration);
+    sysfs_write_int(INTERACTIVE_PATH "go_hispeed_load",
+                    profiles[profile].go_hispeed_load);
+    sysfs_write_int(INTERACTIVE_PATH "hispeed_freq",
+                    profiles[profile].hispeed_freq);
+    sysfs_write_int(INTERACTIVE_PATH "io_is_busy",
+                    profiles[profile].io_is_busy);
+    sysfs_write(INTERACTIVE_PATH "target_loads",
+                    profiles[profile].target_loads);
+    sysfs_write_int(CPUFREQ_PATH "scaling_min_freq",
+                    profiles[profile].scaling_min_freq);
+    sysfs_write_int(CPUFREQ_PATH "scaling_max_freq",
+                    profiles[profile].scaling_max_freq);
+
+    current_power_profile = profile;
+}
+
 static void fugu_power_hint(struct power_module *module, power_hint_t hint, void *data)
 {
     struct intel_power_module *mod = (struct intel_power_module *) module;
@@ -144,12 +206,21 @@ static void fugu_power_hint(struct power_module *module, power_hint_t hint, void
     struct timespec diff_time;
     uint64_t diff;
 
-    (void) data;
-
     switch (hint) {
         case POWER_HINT_INTERACTION:
         case POWER_HINT_CPU_BOOST:
         case POWER_HINT_LAUNCH_BOOST:
+            if (!is_profile_valid(current_power_profile)) {
+                ALOGD("%s: no power profile selected yet", __func__);
+                return;
+            }
+
+            if (!profiles[current_power_profile].boostpulse_duration)
+                return;
+
+            // break out early if governor is not interactive
+            if (!check_governor()) return;
+
             clock_gettime(CLOCK_MONOTONIC, &curr_time);
             timespec_sub(&diff_time, &curr_time, &mod->last_boost_time);
             diff = timespec_to_us(&diff_time);
@@ -161,11 +232,24 @@ static void fugu_power_hint(struct power_module *module, power_hint_t hint, void
                 mod->last_boost_time = curr_time;
             }
             break;
+        case POWER_HINT_SET_PROFILE:
+            pthread_mutex_lock(&lock);
+            set_power_profile(*(int32_t *)data);
+            pthread_mutex_unlock(&lock);
+            break;
         case POWER_HINT_VSYNC:
             break;
         default:
             break;
     }
+}
+
+int get_feature(struct power_module *module __unused, feature_t feature)
+{
+    if (feature == POWER_FEATURE_SUPPORTED_PROFILES) {
+        return PROFILE_MAX;
+    }
+    return -1;
 }
 
 static struct hw_module_methods_t power_module_methods = {
@@ -186,5 +270,6 @@ struct intel_power_module HAL_MODULE_INFO_SYM = {
         init: fugu_power_init,
         setInteractive: fugu_power_set_interactive,
         powerHint: fugu_power_hint,
+        getFeature: get_feature
     },
 };
