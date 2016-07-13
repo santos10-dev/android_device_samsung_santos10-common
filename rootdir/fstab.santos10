@@ -12,3 +12,4 @@
 
 # recovery
 /dev/block/pci/pci0000:00/0000:00:01.0/by-name/BOOT        /boot        emmc    defaults                                                               recoveryonly
+/dev/block/pci/pci0000:00/0000:00:01.0/by-name/RECOVERY    /recovery    emmc    defaults                                                               recoveryonly
