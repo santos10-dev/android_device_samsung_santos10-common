@@ -33,7 +33,7 @@ on early-init
 
 on init
     # Shims
-    export LD_SHIM_LIBS /system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
+    export LD_SHIM_LIBS /system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so:/data/app/com.adobe.flashplayer-1/lib/x86/libflashplayer.so|libcrypto_stock.so:/data/app/com.adobe.flashplayer-1/lib/x86/libflashplayer.so|libssl_stock.so
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
