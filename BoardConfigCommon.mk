@@ -106,6 +106,7 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm7260
+BOARD_MODEM_NEEDS_VIDEO_CALL_FIELD := true
 BOARD_RIL_CLASS := ../../../device/samsung/santos10-common/ril
 
 # Security
