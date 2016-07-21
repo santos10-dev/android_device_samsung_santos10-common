@@ -70,6 +70,9 @@ on post-fs
     # key disabler
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
 
+    # mdnie mode
+    chown system system /sys/class/mdnie/mdnie/mode
+
     # Tune cpusets parameters
     write /dev/cpuset/foreground/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-3
