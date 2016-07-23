@@ -55,6 +55,10 @@ on post-fs
 
     # touchkey backlight
     chown system system /sys/class/sec/sec_touchkey/brightness
+    chown system system /sys/class/sec/sec_touchkey/light_on_touch
+
+    # touchkey size
+    chown system system /sys/class/sec/sec_touchkey/large_keys
 
     # geomagnetic
     chown root input /sys/class/input/input5/enable
@@ -70,8 +74,10 @@ on post-fs
     # key disabler
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
 
-    # mdnie mode
+    # mdnie
     chown system system /sys/class/mdnie/mdnie/mode
+    chown system system /sys/class/mdnie/mdnie/scenario
+    chown system system /sys/class/mdnie/mdnie/negative
 
     # Tune cpusets parameters
     write /dev/cpuset/foreground/cpus 0-3

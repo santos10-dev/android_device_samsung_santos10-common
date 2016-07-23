@@ -142,6 +142,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# AdvancedSettings
+PRODUCT_PACKAGES += \
+    AdvancedSettings
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/idc/sec_keyboard.idc:system/usr/idc/sec_keyboard.idc \
