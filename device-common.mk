@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
     libwrs_omxil_common \
     libwrs_omxil_core_pvwrapped \
     \
-    libmixvbp \
-    libmixvbp_h264 \
-    libmixvbp_mpeg4 \
-    \
     libva_videodecoder \
     libva_videoencoder \
     \

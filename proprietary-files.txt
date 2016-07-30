@@ -23,7 +23,10 @@ vendor/lib/hw/memtrack.clovertrail.so
 lib/libmultidisplay.so:vendor/lib/libmultidisplay.so
 lib/libsepdrm.so:vendor/lib/libsepdrm.so
 
-# Video dependencies
+# Video
+lib/libmixvbp.so:vendor/lib/libmixvbp.so
+lib/libmixvbp_h264.so:vendor/lib/libmixvbp_h264.so
+lib/libmixvbp_mpeg4.so:vendor/lib/libmixvbp_mpeg4.so
 vendor/lib/libpvr2d.so
 
 # Camera
