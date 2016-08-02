@@ -39,7 +39,9 @@ PRODUCT_PACKAGES += \
     \
     libdrm \
     libgccdemangle \
-    pvrsrvctl
+    pvrsrvctl \
+    \
+    hdmi_helper
 
 PRODUCT_PACKAGES += \
     libcorkscrew \

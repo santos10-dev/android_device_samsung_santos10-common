@@ -210,6 +210,12 @@ service orientationd /system/vendor/bin/orientationd
     group input
     seclabel u:r:orientationd:s0
 
+# HDMI helper
+service hdmi_helper /system/bin/hdmi_helper
+    class main
+    user system
+    group graphics
+
 # Charger mode
 service charger /sbin/healthd -c
     class charger
