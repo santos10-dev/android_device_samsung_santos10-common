@@ -57,7 +57,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    audio.hdmi.clovertrail
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf \
