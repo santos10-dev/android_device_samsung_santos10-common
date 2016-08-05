@@ -56,6 +56,10 @@ lib/libsecril-client.so:vendor/lib/libsecril-client.so
 bin/geomagneticd:vendor/bin/geomagneticd
 bin/orientationd:vendor/bin/orientationd
 
+# Keystore
+lib/hw/keystore.clovertrail.so:vendor/lib/hw/keystore.vendor.clovertrail.so
+lib/libsepkeymaster.so:vendor/lib/libsepkeymaster.so
+
 # OpenSSL for old binaries compatibility
 lib/libcrypto.so:vendor/lib/libcrypto_stock.so
 lib/libssl.so:vendor/lib/libssl_stock.so
