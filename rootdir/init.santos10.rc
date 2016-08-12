@@ -88,18 +88,6 @@ on post-fs
     start cpboot-daemon
 
 on post-fs-data
-    # Insert HDMI driver
-    insmod /system/lib/modules/hdmi_audio.ko
-
-    # Insert V4L drivers
-    insmod /system/lib/modules/videobuf-core.ko
-    insmod /system/lib/modules/videobuf-vmalloc.ko
-
-    # Insert Camera drivers
-    insmod /system/lib/modules/s5k5ccgx.ko
-    insmod /system/lib/modules/db8131m.ko
-    insmod /system/lib/modules/atomisp.ko
-
     # Bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chmod 0660 /sys/class/rfkill/rfkill0/state
