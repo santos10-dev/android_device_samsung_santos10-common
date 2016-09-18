@@ -75,6 +75,7 @@ on post-fs
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
 
     # mdnie
+    chown system system /sys/class/mdnie/mdnie/cabc
     chown system system /sys/class/mdnie/mdnie/mode
     chown system system /sys/class/mdnie/mdnie/scenario
     chown system system /sys/class/mdnie/mdnie/negative
