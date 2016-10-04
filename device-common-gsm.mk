@@ -16,7 +16,9 @@
 
 # RIL
 PRODUCT_PACKAGES += \
-    libsecril-client-sap
+    libsecril-client-sap \
+    SamsungServiceMode \
+    Stk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=Santos10RIL \
