@@ -52,6 +52,9 @@ lib/lib_Samsung_Resampler_V01004b.so:vendor/lib/lib_Samsung_Resampler_V01004b.so
 lib/lib_Samsung_SB_AM_V04005_20130729.so:vendor/lib/lib_Samsung_SB_AM_V04005_20130729.so
 lib/libsecril-client.so:vendor/lib/libsecril-client.so
 
+# DRM (Widevine L3 from fugu device)
+vendor/lib/mediadrm/libwvdrmengine.so:vendor/lib/mediadrm/libwvdrmengine.so
+
 # Sensors
 bin/geomagneticd:vendor/bin/geomagneticd
 bin/orientationd:vendor/bin/orientationd
