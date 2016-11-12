@@ -14,6 +14,17 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# MDS
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := writeintptr.cpp
+LOCAL_SHARED_LIBRARIES := libbinder
+LOCAL_MODULE := libshim_mds
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
+
 # DRM
 
 include $(CLEAR_VARS)

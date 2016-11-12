@@ -35,6 +35,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Video
 PRODUCT_PACKAGES += \
+    libshim_mds \
     libshim_drm \
     \
     libdrm \
