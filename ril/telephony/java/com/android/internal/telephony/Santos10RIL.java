@@ -85,6 +85,20 @@ public class Santos10RIL extends RIL {
         send(rr);
     }
 
+    @Override
+    public void
+    acceptCall(Message result) {
+        RILRequest rr
+                = RILRequest.obtain(RIL_REQUEST_ANSWER, result);
+
+        rr.mParcel.writeInt(1); // Samsung
+        rr.mParcel.writeInt(0); // Samsung
+
+        if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+
+        send(rr);
+    }
+
     //***** Private Methods
 
     @Override
