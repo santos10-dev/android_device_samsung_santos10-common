@@ -509,7 +509,6 @@ typedef struct {
     uint16_t mcc;
     uint16_t mnc;
     uint16_t lac;
-    uint16_t psc; // Samsung
     uint32_t cid;
 } AGpsRefLocationCellID;
 
