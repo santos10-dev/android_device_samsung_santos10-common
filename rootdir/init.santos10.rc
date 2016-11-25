@@ -23,7 +23,7 @@ on early-init
     symlink /dev/dri/card0 /dev/card0
 
     # Use multistream for ZRAM
-    write /sys/block/zram0/max_comp_streams 2
+    write /sys/block/zram0/max_comp_streams 4
 
     # Set swappiness
     write /proc/sys/vm/swappiness 100
