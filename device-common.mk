@@ -58,16 +58,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.primary.santos10 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     audio.hdmi.clovertrail \
-    \
-    libsecril-client
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/default_gain.conf:system/etc/default_gain.conf \
-    $(LOCAL_PATH)/configs/tinyucm.conf:system/etc/tinyucm.conf \
+    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/santos10 \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Multimedia
@@ -142,6 +140,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_gps \
     \
+    libsecril-client \
     libstlport
 
 PRODUCT_COPY_FILES += \
