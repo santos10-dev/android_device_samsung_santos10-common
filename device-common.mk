@@ -124,10 +124,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     sensors.santos10
 
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.clovertrail
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.santos10

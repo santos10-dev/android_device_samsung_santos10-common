@@ -17,6 +17,3 @@
 /dev/umts_ipc0                          0660   radio      radio
 /dev/umts_rfs0                          0660   radio      radio
 /dev/block/mmcblk0p12                   0660   radio      radio
-
-# Security
-/dev/sep_sec_driver                     0660   system     system
