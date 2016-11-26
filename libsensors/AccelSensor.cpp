@@ -107,6 +107,8 @@ int AccelSensor::setDelay(int32_t handle, int64_t delay_ns)
     int err = 0;
     char buffer[16];
     int bytes;
+    int64_t val;
+    int delay_ms;
 
     /* handle check */
     if (handle != ID_A) {
@@ -114,15 +116,33 @@ int AccelSensor::setDelay(int32_t handle, int64_t delay_ns)
         return -EINVAL;
     }
 
-    // Some flooring to match stock value
-    delay_ns = delay_ns / 10000000 * 10;
+    // Kernel driver only support specific values
+    if (delay_ns < 744047LL) {
+        val = 744047LL;
+    } else if (delay_ns < 2500000LL) {
+        val = 2500000LL;
+    } else if (delay_ns < 5000000LL) {
+        val = 5000000LL;
+    } else if (delay_ns < 10000000LL) {
+        val = 10000000LL;
+    } else if (delay_ns < 20000000LL) {
+        val = 20000000LL;
+    } else if (delay_ns < 40000000LL) {
+        val = 40000000LL;
+    } else if (delay_ns < 100000000LL) {
+        val = 100000000LL;
+    } else {
+        val = 1000000000LL;
+    }
 
-    if (mDelay != delay_ns) {
+    if (mDelay != val) {
         strcpy(&input_sysfs_path[input_sysfs_path_len], "poll_delay");
-        bytes = sprintf(buffer, "%lld", delay_ns);
+        /* delay is stored in ms */
+        delay_ms = val / 1000000;
+        bytes = sprintf(buffer, "%d", delay_ms);
         err = write_sys_attribute(input_sysfs_path, buffer, bytes);
         if (err == 0) {
-            mDelay = delay_ns;
+            mDelay = val;
         }
     }
 

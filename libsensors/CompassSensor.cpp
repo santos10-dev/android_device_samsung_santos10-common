@@ -107,7 +107,7 @@ int CompassSensor::setDelay(int32_t handle, int64_t delay_ns)
     int err = 0;
     char buffer[16];
     int bytes;
-    int val;
+    int delay_ms;
 
     /* handle check */
     if (handle != ID_M) {
@@ -115,25 +115,14 @@ int CompassSensor::setDelay(int32_t handle, int64_t delay_ns)
         return -EINVAL;
     }
 
-    // Kernel driver only support specific values
-    if (delay_ns < 20000000L) {
-        val = 1;
-    } else if (delay_ns < 60000000L) {
-        val = 20;
-    } else if (delay_ns < 200000000L) {
-        val = 60;
-    } else if (delay_ns < 1000000000L) {
-        val = 200;
-    } else {
-        val = 1000;
-    }
-
-    if (mDelay != val) {
+    if (mDelay != delay_ns) {
         strcpy(&input_sysfs_path[input_sysfs_path_len], "poll_delay");
-        bytes = sprintf(buffer, "%d", val);
+        /* delay is stored in ms */
+        delay_ms = delay_ns / 1000000;
+        bytes = sprintf(buffer, "%d", delay_ms);
         err = write_sys_attribute(input_sysfs_path, buffer, bytes);
         if (err == 0) {
-            mDelay = val;
+            mDelay = delay_ns;
         }
     }
 
