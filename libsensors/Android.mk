@@ -33,7 +33,6 @@ LOCAL_SRC_FILES := \
                 InputEventReader.cpp \
                 AccelSensor.cpp \
                 CompassSensor.cpp \
-                OrientationSensor.cpp \
                 LightSensor.cpp \
                 sensors.cpp
 

@@ -35,8 +35,7 @@ __BEGIN_DECLS
 
 #define ID_A  (0)
 #define ID_M  (1)
-#define ID_O  (2)
-#define ID_L  (3)
+#define ID_L  (2)
 
 /*****************************************************************************/
 
@@ -63,14 +62,6 @@ __BEGIN_DECLS
 #define EVENT_TYPE_MAGV_Y           ABS_Y
 #define EVENT_TYPE_MAGV_Z           ABS_Z
 
-/* For OrientationSensor */
-#define RANGE_O                     (360.0f)
-#define RESOLUTION_O                (1.0f)
-#define POWER_O                     (0.0f)
-#define EVENT_TYPE_YAW              REL_X
-#define EVENT_TYPE_PITCH            REL_Y
-#define EVENT_TYPE_ROLL             REL_Z
-
 /* For LightSensor */
 #define RANGE_L                     (65528.0f)
 #define RESOLUTION_L                (1.0f)
@@ -89,12 +80,6 @@ __BEGIN_DECLS
 #define CONVERT_M_X                 (CONVERT_M)
 #define CONVERT_M_Y                 (CONVERT_M)
 #define CONVERT_M_Z                 (CONVERT_M)
-
-/* conversion of orientation data to degree units */
-#define CONVERT_O                   (1.0f / 1000.0f)
-#define CONVERT_O_A                 (CONVERT_O)
-#define CONVERT_O_P                 (CONVERT_O)
-#define CONVERT_O_R                 (CONVERT_O)
 
 /*****************************************************************************/
 

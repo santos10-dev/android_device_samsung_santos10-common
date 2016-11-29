@@ -35,15 +35,13 @@
 
 #include "AccelSensor.h"
 #include "CompassSensor.h"
-#include "OrientationSensor.h"
 #include "LightSensor.h"
 
 /*****************************************************************************/
 
 #define SENSORS_ACCELERATION_HANDLE     0
 #define SENSORS_MAGNETIC_FIELD_HANDLE   1
-#define SENSORS_ORIENTATION_HANDLE      2
-#define SENSORS_LIGHT_HANDLE            3
+#define SENSORS_LIGHT_HANDLE            2
 
 /*****************************************************************************/
 
@@ -59,11 +57,6 @@ static const struct sensor_t sSensorList[] = {
       45800, SENSORS_MAGNETIC_FIELD_HANDLE,
       SENSOR_TYPE_MAGNETIC_FIELD, RANGE_M, RESOLUTION_M, POWER_M, 10000, 0, 0,
       SENSOR_STRING_TYPE_MAGNETIC_FIELD, "", 0, SENSOR_FLAG_CONTINUOUS_MODE, { } },
-    { "MS-x Orientation Sensor",
-      "Yamaha Corporation",
-      1, SENSORS_ORIENTATION_HANDLE,
-      SENSOR_TYPE_ORIENTATION, RANGE_O, RESOLUTION_O, POWER_O, 10000, 0, 0,
-      SENSOR_STRING_TYPE_ORIENTATION, "", 0, SENSOR_FLAG_CONTINUOUS_MODE, { } },
     { "BH1733 Light Sensor",
       "ROHM",
       45800, SENSORS_LIGHT_HANDLE,
@@ -113,8 +106,7 @@ private:
     enum {
         accel        = 0,
         magnetic     = 1,
-        orientation  = 2,
-        light        = 3,
+        light        = 2,
         numSensorDrivers,
         numFds,
     };
@@ -131,8 +123,6 @@ private:
                 return accel;
             case ID_M:
                 return magnetic;
-            case ID_O:
-                return orientation;
             case ID_L:
                 return light;
         }
@@ -153,11 +143,6 @@ sensors_poll_context_t::sensors_poll_context_t()
     mPollFds[magnetic].fd = mSensors[magnetic]->getFd();
     mPollFds[magnetic].events = POLLIN;
     mPollFds[magnetic].revents = 0;
-
-    mSensors[orientation] = new OrientationSensor();
-    mPollFds[orientation].fd = mSensors[orientation]->getFd();
-    mPollFds[orientation].events = POLLIN;
-    mPollFds[orientation].revents = 0;
 
     mSensors[light] = new LightSensor();
     mPollFds[light].fd = mSensors[light]->getFd();
@@ -193,12 +178,6 @@ int sensors_poll_context_t::activate(int handle, int enabled) {
         case ID_M:
         case ID_L:
             /* No dependencies */
-            break;
-
-        case ID_O:
-            /* These sensors depend on ID_A and ID_M */
-            mSensors[handleToDriver(ID_A)]->setEnable(ID_A, enabled);
-            mSensors[handleToDriver(ID_M)]->setEnable(ID_M, enabled);
             break;
 
         default:

@@ -193,12 +193,6 @@ service geomagneticd /system/vendor/bin/geomagneticd
     group system input
     seclabel u:r:geomagneticd:s0
 
-service orientationd /system/vendor/bin/orientationd
-    class main
-    user compass
-    group input
-    seclabel u:r:orientationd:s0
-
 # HDMI helper
 service hdmi_helper /system/bin/hdmi_helper
     class main
