@@ -99,6 +99,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/santos10-common/bluetooth/vnd_santos10.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/santos10-common/bluetooth
 
+# Sensors
+BOARD_USE_LEGACY_SENSORS_FUSION := true
+
 # CMHW
 BOARD_HARDWARE_CLASS += device/samsung/santos10-common/cmhw
 
