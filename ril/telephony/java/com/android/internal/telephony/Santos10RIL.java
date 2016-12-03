@@ -37,10 +37,6 @@ import java.util.Collections;
  */
 public class Santos10RIL extends RIL {
 
-    //***** Constants
-
-    private static final int RIL_REQUEST_DIAL_EMERGENCY_CALL = 10016;
-
     //***** Constructors
 
     public Santos10RIL(Context context, int preferredNetworkType, int cdmaSubscription) {
@@ -57,12 +53,6 @@ public class Santos10RIL extends RIL {
     @Override
     public void
     dial(String address, int clirMode, UUSInfo uusInfo, Message result) {
-        // Samsung: EmergencyCall
-        if (PhoneNumberUtils.isEmergencyNumber(address)) {
-            dialEmergencyCall(address, clirMode, result);
-            return;
-        }
-
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_DIAL, result);
 
         rr.mParcel.writeString(address);
@@ -85,61 +75,7 @@ public class Santos10RIL extends RIL {
         send(rr);
     }
 
-    @Override
-    public void
-    acceptCall(Message result) {
-        RILRequest rr
-                = RILRequest.obtain(RIL_REQUEST_ANSWER, result);
-
-        rr.mParcel.writeInt(1); // Samsung
-        rr.mParcel.writeInt(0); // Samsung
-
-        if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
-
-        send(rr);
-    }
-
     //***** Private Methods
-
-    @Override
-    protected Object
-    responseIccCardStatus(Parcel p) {
-        IccCardApplicationStatus appStatus;
-
-        IccCardStatus cardStatus = new IccCardStatus();
-        cardStatus.setCardState(p.readInt());
-        cardStatus.setUniversalPinState(p.readInt());
-        cardStatus.mGsmUmtsSubscriptionAppIndex = p.readInt();
-        cardStatus.mCdmaSubscriptionAppIndex = p.readInt();
-        cardStatus.mImsSubscriptionAppIndex = p.readInt();
-
-        int numApplications = p.readInt();
-
-        // limit to maximum allowed applications
-        if (numApplications > IccCardStatus.CARD_MAX_APPS) {
-            numApplications = IccCardStatus.CARD_MAX_APPS;
-        }
-        cardStatus.mApplications = new IccCardApplicationStatus[numApplications];
-
-        for (int i = 0 ; i < numApplications ; i++) {
-            appStatus = new IccCardApplicationStatus();
-            appStatus.app_type       = appStatus.AppTypeFromRILInt(p.readInt());
-            appStatus.app_state      = appStatus.AppStateFromRILInt(p.readInt());
-            appStatus.perso_substate = appStatus.PersoSubstateFromRILInt(p.readInt());
-            appStatus.aid            = p.readString();
-            appStatus.app_label      = p.readString();
-            appStatus.pin1_replaced  = p.readInt();
-            appStatus.pin1           = appStatus.PinStateFromRILInt(p.readInt());
-            appStatus.pin2           = appStatus.PinStateFromRILInt(p.readInt());
-            p.readInt(); // Samsung: pin1_num_retries
-            p.readInt(); // Samsung: puk1_num_retries
-            p.readInt(); // Samsung: pin2_num_retries
-            p.readInt(); // Samsung: puk2_num_retries
-            p.readInt(); // Samsung: perso_unblock_retries
-            cardStatus.mApplications[i] = appStatus;
-        }
-        return cardStatus;
-    }
 
     @Override
     protected Object
@@ -222,24 +158,6 @@ public class Santos10RIL extends RIL {
         }
 
         return response;
-    }
-
-    private void
-    dialEmergencyCall(String address, int clirMode, Message result) {
-        RILRequest rr;
-        Rlog.v(RILJ_LOG_TAG, "Emergency dial: " + address);
-
-        rr = RILRequest.obtain(RIL_REQUEST_DIAL_EMERGENCY_CALL, result);
-        rr.mParcel.writeString(address);
-        rr.mParcel.writeInt(clirMode);
-        rr.mParcel.writeInt(0);      // Samsung: CallDetails.call_type
-        rr.mParcel.writeInt(3);      // Samsung: CallDetails.call_domain
-        rr.mParcel.writeString("");  // Samsung: CallDetails.getCsvFromExtra
-        rr.mParcel.writeInt(0);      // UUS information is absent
-
-        if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
-
-        send(rr);
     }
 
 }

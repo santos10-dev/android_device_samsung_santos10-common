@@ -30,7 +30,7 @@
     {RIL_REQUEST_USIM_PB_CAPA, dispatchVoid, responseVoid},
     {RIL_REQUEST_LOCK_INFO, dispatchVoid, responseVoid},
     {RIL_REQUEST_SEND_MOBILE_TRACKER_SMS, dispatchVoid, responseVoid},
-    {RIL_REQUEST_DIAL_EMERGENCY_CALL, dispatchDial, responseVoid},
+    {RIL_REQUEST_DIAL_EMERGENCY_CALL, dispatchVoid, responseVoid},
     {RIL_REQUEST_GET_STOREAD_MSG_COUNT, dispatchVoid, responseVoid},
     {RIL_REQUEST_STK_SIM_INIT_EVENT, dispatchVoid, responseVoid},
     {RIL_REQUEST_GET_LINE_ID, dispatchVoid, responseVoid},
@@ -41,8 +41,8 @@
     {RIL_REQUEST_UICC_GBA_AUTHENTICATE_BOOTSTRAP, dispatchVoid, responseVoid},
     {RIL_REQUEST_UICC_GBA_AUTHENTICATE_NAF, dispatchVoid, responseVoid},
     {RIL_REQUEST_SIM_TRANSMIT_BASIC, dispatchVoid, responseVoid},
-    // RIL_REQUEST_SIM_OPEN_CHANNEL redefined, see ril_commands.h
-    // RIL_REQUEST_SIM_CLOSE_CHANNEL redefined, see ril_commands.h
+    // RIL_REQUEST_SIM_OPEN_CHANNEL already defined, see ril_commands.h
+    // RIL_REQUEST_SIM_CLOSE_CHANNEL already defined, see ril_commands.h
     {RIL_REQUEST_SIM_TRANSMIT_CHANNEL, dispatchVoid, responseVoid},
     {RIL_REQUEST_SIM_AUTH, dispatchVoid, responseVoid},
     {RIL_REQUEST_MODIFY_CALL_INITIATE, dispatchVoid, responseVoid},
