@@ -30,8 +30,6 @@ MALLOC_SVELTE := true
 TARGET_CPU_ABI2 := armeabi-v7a
 TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi
 BUILD_ARM_FOR_X86 := true
-PRC_COMPATIBILITY_PACKAGE := true
-COMPATIBILITY_ENHANCEMENT_PACKAGE := true
 
 # Specific headers
 TARGET_BOARD_KERNEL_HEADERS := device/samsung/santos10-common/kernel-headers
