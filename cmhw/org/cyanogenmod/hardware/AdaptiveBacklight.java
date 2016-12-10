@@ -26,8 +26,7 @@ import org.cyanogenmod.internal.util.FileUtils;
  */
 public class AdaptiveBacklight {
 
-    private static final String FILE_CABC = SystemProperties.get(
-            "ro.cm.hardware.cabc", "/sys/class/mdnie/mdnie/cabc");
+    private static final String FILE_CABC = "/sys/class/mdnie/mdnie/cabc";
 
     /**
      * Whether device supports an adaptive backlight technology.

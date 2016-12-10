@@ -17,9 +17,8 @@
 package org.cyanogenmod.hardware;
 
 import cyanogenmod.hardware.DisplayMode;
-import org.cyanogenmod.hardware.util.FileUtils;
+import org.cyanogenmod.internal.util.FileUtils;
 
-import java.io.File;
 import java.util.Arrays;
 
 /*
@@ -46,22 +45,10 @@ public class DisplayModeControl {
         new DisplayMode(3, "Auto"),
     };
 
-    /**
-     * Import cmsdk functions until it comes to stable cm-13.0
-     */
-    private static boolean isFileReadable(String fileName) {
-        final File file = new File(fileName);
-        return file.exists() && file.canRead();
-    }
-    private static boolean isFileWritable(String fileName) {
-        final File file = new File(fileName);
-        return file.exists() && file.canWrite();
-    }
-
     static {
-        if (isFileReadable(DEFAULT_PATH)) {
+        if (FileUtils.isFileReadable(DEFAULT_PATH)) {
             setMode(getDefaultMode(), false);
-        } else if (isFileReadable(MODE_PATH)) {
+        } else if (FileUtils.isFileReadable(MODE_PATH)) {
             /* If default mode is not set yet, set current mode as default */
             setMode(getCurrentMode(), true);
         }
@@ -72,10 +59,10 @@ public class DisplayModeControl {
      * Real implementations must, of course, return true
      */
     public static boolean isSupported() {
-        return isFileWritable(MODE_PATH) &&
-                isFileReadable(MODE_PATH) &&
-                isFileWritable(DEFAULT_PATH) &&
-                isFileReadable(DEFAULT_PATH);
+        return FileUtils.isFileWritable(MODE_PATH) &&
+                FileUtils.isFileReadable(MODE_PATH) &&
+                FileUtils.isFileWritable(DEFAULT_PATH) &&
+                FileUtils.isFileReadable(DEFAULT_PATH);
     }
 
     /*

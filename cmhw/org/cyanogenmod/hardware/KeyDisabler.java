@@ -16,11 +16,7 @@
 
 package org.cyanogenmod.hardware;
 
-import android.util.Log;
-
-import java.io.File;
-
-import org.cyanogenmod.hardware.util.FileUtils;
+import org.cyanogenmod.internal.util.FileUtils;
 
 /*
  * Disable capacitive keys
@@ -33,8 +29,6 @@ import org.cyanogenmod.hardware.util.FileUtils;
 
 public class KeyDisabler {
 
-    private static final String TAG = "KeyDisabler";
-
     private static final String FILE_KEYDISABLER = "/sys/class/sec/sec_touchkey/keypad_enable";
 
     /*
@@ -43,7 +37,8 @@ public class KeyDisabler {
      */
 
     public static boolean isSupported() {
-        return new File(FILE_KEYDISABLER).exists();
+        return FileUtils.isFileWritable(FILE_KEYDISABLER) &&
+                FileUtils.isFileReadable(FILE_KEYDISABLER);
     }
 
     /*
@@ -51,12 +46,7 @@ public class KeyDisabler {
      */
 
     public static boolean isActive() {
-        try {
-            return Integer.parseInt(FileUtils.readOneLine(FILE_KEYDISABLER)) == 0;
-        } catch (Exception e) {
-            Log.e(TAG, e.getMessage(), e);
-        }
-        return false;
+        return "0".equals(FileUtils.readOneLine(FILE_KEYDISABLER));
     }
 
     /*
