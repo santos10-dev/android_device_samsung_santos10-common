@@ -26,11 +26,6 @@ TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 
 MALLOC_SVELTE := true
 
-# Houdini
-TARGET_CPU_ABI2 := armeabi-v7a
-TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi
-BUILD_ARM_FOR_X86 := true
-
 # Specific headers
 TARGET_BOARD_KERNEL_HEADERS := device/samsung/santos10-common/kernel-headers
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/santos10-common/include
