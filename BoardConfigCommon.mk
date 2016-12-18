@@ -91,7 +91,7 @@ WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/bcmdhd_apsta.bin"
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/santos10-common/bluetooth/vnd_santos10.txt
+BOARD_CUSTOM_BT_CONFIG := device/samsung/santos10-common/bluetooth/vnd_santos10.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/santos10-common/bluetooth
 
 # Sensors
