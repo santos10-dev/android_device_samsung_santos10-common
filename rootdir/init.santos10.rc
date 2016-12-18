@@ -181,10 +181,11 @@ service gpsd /system/vendor/bin/gpsd -c /system/etc/gps.xml
     ioprio be 0
 
 # IMG Graphics
-service pvrsrvrtl /system/bin/pvrsrvctl
+service pvrsrvctl /system/bin/pvrsrvctl
     class core
-    oneshot
     user root
+    oneshot
+    seclabel u:r:pvrsrvctl:s0
 
 # Sensors
 service geomagneticd /system/vendor/bin/geomagneticd
