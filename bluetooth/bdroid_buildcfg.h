@@ -19,4 +19,7 @@
 
 #define BTM_DEF_LOCAL_NAME "Samsung Galaxy Tab 3"
 
+/* Defined if the kernel does not have support for CLOCK_BOOTTIME_ALARM */
+#define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE
+
 #endif
