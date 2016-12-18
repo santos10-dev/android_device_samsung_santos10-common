@@ -94,6 +94,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera_profiles.xml:system/etc/camera_profiles.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true  \
+    media.stagefright.less-secure=true
+
 # Power
 PRODUCT_PACKAGES += \
     power.santos10

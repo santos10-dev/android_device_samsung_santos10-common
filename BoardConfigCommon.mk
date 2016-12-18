@@ -77,6 +77,9 @@ BOARD_USES_MRST_OMX := true
 
 BOARD_GLOBAL_CFLAGS += -DMIXVBP_KK_BLOBS
 
+# Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
