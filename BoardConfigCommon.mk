@@ -24,6 +24,9 @@ ENABLE_CPUSETS := true
 TARGET_BOARD_PLATFORM := clovertrail
 TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 
+# Use dlmalloc
+MALLOC_IMPL := dlmalloc
+
 # Houdini
 TARGET_CPU_ABI2 := armeabi-v7a
 TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi
