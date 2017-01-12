@@ -33,7 +33,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/santos10-common/include
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/santos10
-TARGET_KERNEL_CONFIG := cyanogenmod_santos10_defconfig
+TARGET_KERNEL_CONFIG := lineage_santos10_defconfig
 
 KERNEL_TOOLCHAIN_PREFIX := x86_64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := bzImage
