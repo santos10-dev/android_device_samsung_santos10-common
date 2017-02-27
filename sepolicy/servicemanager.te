@@ -1,0 +1,3 @@
+allow servicemanager gpsd:dir search;
+allow servicemanager gpsd:file { open read };
+allow servicemanager gpsd:process getattr;

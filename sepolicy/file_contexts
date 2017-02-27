@@ -1,0 +1,7 @@
+/system/bin/pvrsrvctl				u:object_r:pvrsrvctl_exec:s0
+
+/dev/dri/card0					u:object_r:gpu_device:s0
+/dev/pvr_sync					u:object_r:gpu_device:s0
+
+/dev/ttyMFD1					u:object_r:gps_device:s0
+/data/system/gps(/.*)?				u:object_r:gps_data_file:s0
