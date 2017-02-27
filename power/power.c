@@ -209,7 +209,7 @@ static void fugu_power_hint(struct power_module *module, power_hint_t hint, void
     switch (hint) {
         case POWER_HINT_INTERACTION:
         case POWER_HINT_CPU_BOOST:
-        case POWER_HINT_LAUNCH_BOOST:
+        case POWER_HINT_LAUNCH:
             if (!is_profile_valid(current_power_profile)) {
                 ALOGD("%s: no power profile selected yet", __func__);
                 return;
