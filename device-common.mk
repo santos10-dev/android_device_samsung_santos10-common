@@ -121,11 +121,11 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.santos10
+    lights.clovertrail
 
 # IR
 PRODUCT_PACKAGES += \
-    consumerir.santos10
+    consumerir.clovertrail
 
 # GPS
 PRODUCT_PACKAGES += \
