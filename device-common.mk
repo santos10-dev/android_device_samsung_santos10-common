@@ -25,6 +25,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=174m \
     dalvik.vm.heapmaxfree=8m
 
+# Filesystem
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
+
 # Video
 PRODUCT_PACKAGES += \
     libshim_mds \
