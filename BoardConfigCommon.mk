@@ -55,13 +55,6 @@ BOARD_FLASH_BLOCK_SIZE := 1024
 # Use samsung specific code
 BOARD_VENDOR := samsung
 
-# Dexopt
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-  endif
-endif
-
 # Video
 ENABLE_IMG_GRAPHICS := true
 TARGET_DISABLE_CURSOR_LAYER := true
