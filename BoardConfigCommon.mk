@@ -113,6 +113,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/santos10-common/ril
 BOARD_SEPOLICY_DIRS += device/samsung/santos10-common/sepolicy
 
 # Charger mode
+WITH_CM_CHARGER := false
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_NO_CHARGER_LED := true
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/samsung/santos10-common/charger/images
