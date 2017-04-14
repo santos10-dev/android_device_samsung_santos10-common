@@ -54,6 +54,7 @@ BOARD_FLASH_BLOCK_SIZE := 1024
 
 # Use samsung specific code
 BOARD_VENDOR := samsung
+TARGET_POWERHAL_VARIANT := samsung
 
 # Video
 ENABLE_IMG_GRAPHICS := true

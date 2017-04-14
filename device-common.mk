@@ -104,7 +104,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.santos10
+    power.clovertrail
 
 # Wifi
 PRODUCT_PACKAGES += \

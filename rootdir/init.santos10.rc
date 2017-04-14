@@ -31,6 +31,9 @@ on early-init
     # Increase read-ahead value to 256 kb
     write /sys/block/mmcblk0/queue/read_ahead_kb 256
 
+    # Used for powersave profile
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 933000
+
 on init
     # Shims
     export LD_SHIM_LIBS /system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
