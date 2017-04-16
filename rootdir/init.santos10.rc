@@ -127,6 +127,7 @@ service cpboot-daemon /system/vendor/bin/cbd -d
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r
     disabled
+    seclabel u:r:cpboot-daemon:s0
 
 # Wifi
 service wpa_supplicant /system/bin/wpa_supplicant \
@@ -181,6 +182,7 @@ service hdmi_helper /system/bin/hdmi_helper
     class main
     user system
     group graphics
+    seclabel u:r:hdmi_helper:s0
 
 # Charger mode
 service charger /sbin/healthd -c
