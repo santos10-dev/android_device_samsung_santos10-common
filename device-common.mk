@@ -184,6 +184,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_CHARACTERISTICS := tablet
 
+# Boot animation
+TARGET_SCREEN_WIDTH := 1280
+TARGET_SCREEN_HEIGHT := 480
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 
 $(call inherit-product, vendor/samsung/santos10-common/device-common-vendor-blobs.mk)
