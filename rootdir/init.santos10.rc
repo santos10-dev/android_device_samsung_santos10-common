@@ -91,6 +91,9 @@ on post-fs
     # key disabler
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
 
+    # touchscreen disabler
+    chown system system /sys/class/input/input1/enabled
+
     # mdnie
     chown system system /sys/class/mdnie/mdnie/cabc
     chown system system /sys/class/mdnie/mdnie/mode
