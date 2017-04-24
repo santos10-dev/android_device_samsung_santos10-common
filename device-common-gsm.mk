@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+LOCAL_PATH := device/samsung/santos10-common
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-gsm
+
 # RIL
 PRODUCT_PACKAGES += \
     libsecril-client-sap \
