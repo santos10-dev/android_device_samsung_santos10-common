@@ -5,3 +5,5 @@ init_daemon_domain(pvrsrvctl)
 
 allow pvrsrvctl self:capability sys_module;
 allow pvrsrvctl gpu_device:chr_file { getattr ioctl open read write };
+
+allow pvrsrvctl system_file:file execmod;

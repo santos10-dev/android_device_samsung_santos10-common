@@ -27,6 +27,8 @@ TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 
 MALLOC_SVELTE := true
 
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
 # Houdini
 TARGET_CPU_ABI2 := armeabi-v7a
 TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi

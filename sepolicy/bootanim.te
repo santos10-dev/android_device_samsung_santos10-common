@@ -1,0 +1,1 @@
+allow bootanim system_file:file execmod;
