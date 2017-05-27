@@ -24,9 +24,9 @@ lib/libmultidisplay.so:vendor/lib/libmultidisplay.so
 lib/libsepdrm.so:vendor/lib/libsepdrm.so
 
 # Video
-lib/libmixvbp.so:vendor/lib/libmixvbp.so
-lib/libmixvbp_h264.so:vendor/lib/libmixvbp_h264.so
-lib/libmixvbp_mpeg4.so:vendor/lib/libmixvbp_mpeg4.so
+lib/libmixvbp.so:vendor/lib/libmixvbp.so|adba4ea97f63f1a17a3ca432dd7d54810339cac7
+lib/libmixvbp_h264.so:vendor/lib/libmixvbp_h264.so|77e7e3dfb8797f79bfeb419920af892f24330531
+lib/libmixvbp_mpeg4.so:vendor/lib/libmixvbp_mpeg4.so|c3087067251f7ba9515c26a2ffb85ef0436487ab
 vendor/lib/libpvr2d.so
 
 # Camera
