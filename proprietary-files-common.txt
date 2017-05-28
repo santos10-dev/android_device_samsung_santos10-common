@@ -38,8 +38,8 @@ lib/libmfldadvci.so:vendor/lib/libmfldadvci.so
 lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
 lib/libtbd.so:vendor/lib/libtbd.so
 
-# DRM (Widevine L3 from fugu device)
-vendor/lib/mediadrm/libwvdrmengine.so:vendor/lib/mediadrm/libwvdrmengine.so|cc5ea92fa539b660143a45765e5f75c1d53aa24e
+# DRM (fugu N2G47R)
+vendor/lib/mediadrm/libwvdrmengine.so:vendor/lib/mediadrm/libwvdrmengine.so|64a762e7f04a76ddd22d61bfcf25f439ba0a4894
 
 # Sensors
 bin/geomagneticd:vendor/bin/geomagneticd
