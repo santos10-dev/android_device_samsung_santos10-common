@@ -1,2 +1,6 @@
 # hdmi_helper
 type hdmi_helper, domain;
+
+allow hdmi_helper servicemanager:binder call;
+allow hdmi_helper self:netlink_kobject_uevent_socket { bind create setopt read };
+allow hdmi_helper display_service:service_manager find;
