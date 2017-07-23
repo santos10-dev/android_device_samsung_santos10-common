@@ -166,6 +166,7 @@ service gpsd /system/vendor/bin/gpsd -c /system/etc/gps.xml
     user gps
     group system inet net_raw
     ioprio be 0
+    seclabel u:r:gpsd:s0
 
 # IMG Graphics
 service pvrsrvctl /system/bin/pvrsrvctl
