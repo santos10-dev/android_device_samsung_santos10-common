@@ -25,10 +25,12 @@
  * device tree.
  */
 
-#define CPU0_SYSFS_PATH "/sys/devices/system/cpu/cpu0"
-#define CPU0_INTERACTIVE_PATH "/sys/devices/system/cpu/cpufreq/interactive"
+static const char* CPU_SYSFS_PATHS[1] = {
+    "/sys/devices/system/cpu/cpu0"
+};
 
-#define CPU4_SYSFS_PATH ""
-#define CPU4_INTERACTIVE_PATH ""
+static const char* CPU_INTERACTIVE_PATHS[1] = {
+    "/sys/devices/system/cpu/cpufreq/interactive"
+};
 
 #endif // SAMSUNG_POWER_H
