@@ -1,2 +1,7 @@
 # geomagneticd
 type geomagneticd, domain;
+
+allow geomagneticd sysfs:dir { open read write };
+allow geomagneticd input_device:dir { open read };
+allow geomagneticd input_device:chr_file { ioctl open read };
+allow geomagneticd yas_data_file:file { getattr open read write };
