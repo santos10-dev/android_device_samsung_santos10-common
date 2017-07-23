@@ -1,4 +1,5 @@
 allow init geomagneticd:process { noatsecure rlimitinh siginh transition };
+allow init hdmi_helper:process { noatsecure rlimitinh siginh transition };
 
 allow init ram_device:blk_file write;
 allow init tmpfs:lnk_file create;
