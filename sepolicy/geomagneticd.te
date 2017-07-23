@@ -1,7 +1,13 @@
 # geomagneticd
 type geomagneticd, domain;
+type geomagneticd_exec, exec_type, file_type;
+init_daemon_domain(geomagneticd)
 
-allow geomagneticd sysfs:dir { open read write };
 allow geomagneticd input_device:dir { open read };
 allow geomagneticd input_device:chr_file { ioctl open read };
+
+allow geomagneticd sysfs:dir { open read };
+allow geomagneticd sysfs:file { open read };
+allow geomagneticd sysfs_geomagnetic_writable:file { open read write };
+
 allow geomagneticd yas_data_file:file { getattr open read write };

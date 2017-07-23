@@ -1,6 +1,9 @@
+# GPS
 allow servicemanager gpsd:dir search;
 allow servicemanager gpsd:file { open read };
 allow servicemanager gpsd:process getattr;
 
+# hdmi_helper
 allow servicemanager hdmi_helper:dir search;
 allow servicemanager hdmi_helper:file { open read };
+allow servicemanager hdmi_helper:process getattr;

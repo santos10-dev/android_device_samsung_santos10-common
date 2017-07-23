@@ -1,5 +1,5 @@
-allow init geomagneticd:process { noatsecure rlimitinh siginh transition };
-allow init hdmi_helper:process { noatsecure rlimitinh siginh transition };
-
+# /sys/block/zram0/max_comp_streams
 allow init ram_device:blk_file write;
+
+# /storage/sdcard0
 allow init tmpfs:lnk_file create;

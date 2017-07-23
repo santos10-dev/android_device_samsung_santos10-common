@@ -1,1 +1,6 @@
+# Geomagnetic
+type sysfs_geomagnetic_writable, fs_type, sysfs_type, mlstrustedobject;
 type yas_data_file, file_type, data_file_type;
+
+# Advanced settings
+type sysfs_advset_writable, fs_type, sysfs_type, mlstrustedobject;

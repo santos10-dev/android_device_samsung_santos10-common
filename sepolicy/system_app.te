@@ -1,1 +1,4 @@
+# Advanced settings
+allow system_app sysfs_advset_writable:file { getattr open write };
+
 allow system_app system_file:file execmod;
