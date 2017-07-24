@@ -3,7 +3,7 @@ type geomagneticd, domain;
 type geomagneticd_exec, exec_type, file_type;
 init_daemon_domain(geomagneticd)
 
-allow geomagneticd input_device:dir { open read };
+allow geomagneticd input_device:dir { search open read };
 allow geomagneticd input_device:chr_file { ioctl open read };
 
 allow geomagneticd sysfs:dir { open read };
