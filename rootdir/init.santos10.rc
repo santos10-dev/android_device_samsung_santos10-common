@@ -36,7 +36,7 @@ on early-init
 
 on init
     # Shims
-    export LD_SHIM_LIBS /system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
+    export LD_SHIM_LIBS /system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
 
     symlink /sdcard /storage/sdcard0
 
