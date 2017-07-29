@@ -128,4 +128,23 @@ BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/samsung/santos10-common/charger/image
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/fstab.santos10
+ifneq ($(RECOVERY_VARIANT),twrp)
+  TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/fstab.santos10
+else
+  TW_THEME := landscape_hdpi
+
+  TARGET_RECOVERY_FSTAB := device/samsung/santos10-common/rootdir/recovery.fstab
+
+  TW_NO_EXFAT_FUSE := true
+  TW_INCLUDE_NTFS_3G := true
+
+  BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun/file"
+
+  BOARD_HAS_NO_REAL_SDCARD := true
+  RECOVERY_SDCARD_ON_DATA := true
+  TW_NO_REBOOT_BOOTLOADER := true
+  TW_HAS_DOWNLOAD_MODE := true
+  TW_INCLUDE_CRYPTO := true
+
+  TW_EXCLUDE_SUPERSU := true
+endif
