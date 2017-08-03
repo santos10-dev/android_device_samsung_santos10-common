@@ -21,8 +21,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-gsm
 # RIL
 PRODUCT_PACKAGES += \
     libsecril-client-sap \
-    SamsungServiceMode \
-    Stk
+    SamsungServiceMode
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=Santos10RIL \
