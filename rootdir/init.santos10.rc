@@ -35,9 +35,6 @@ on early-init
     write /sys/devices/system/cpu/cpufreq/interactive/boost 1
 
 on init
-    # Shims
-    export LD_SHIM_LIBS /system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
-
     symlink /sdcard /storage/sdcard0
 
     # Symlink for modem binary path

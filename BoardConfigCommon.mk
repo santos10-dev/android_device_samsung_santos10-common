@@ -68,7 +68,7 @@ TARGET_POWERHAL_VARIANT := samsung
 # Video
 ENABLE_IMG_GRAPHICS := true
 TARGET_DISABLE_CURSOR_LAYER := true
-LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libmultidisplay.so|libshim_mds.so:/system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so
+LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libmultidisplay.so|libshim_mds.so:/system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
