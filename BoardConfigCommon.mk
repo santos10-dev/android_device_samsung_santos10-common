@@ -45,6 +45,8 @@ TARGET_KERNEL_CONFIG := lineage_santos10_defconfig
 KERNEL_TOOLCHAIN_PREFIX := x86_64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := bzImage
 
+LZMA_RAMDISK_TARGETS := boot,recovery
+
 # Filesystem
 TARGET_KERNEL_HAVE_EXFAT := true
 
