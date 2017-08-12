@@ -65,14 +65,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.santos10 \
+    audio.primary.clovertrail \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     audio.hdmi.clovertrail \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/santos10 \
+    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/etc/mixer_paths_0.xml \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Multimedia

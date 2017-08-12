@@ -73,6 +73,7 @@ LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libmultidisplay.so|libshim_mds.so:
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
+TARGET_AUDIOHAL_VARIANT := samsung
 
 # Multimedia
 BUILD_WITH_FULL_STAGEFRIGHT := true
