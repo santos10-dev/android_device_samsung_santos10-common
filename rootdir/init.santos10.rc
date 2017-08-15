@@ -97,8 +97,6 @@ on post-fs
     chown system system /sys/class/mdnie/mdnie/scenario
     chown system system /sys/class/mdnie/mdnie/negative
 
-    start cpboot-daemon
-
 on post-fs-data
     # Bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -112,6 +110,12 @@ on post-fs-data
     chmod 0664 /sys/class/sec/gps/GPS_PWR_EN/value
     chown system system /sys/class/sec/gps/GPS_PWR_EN/value
     mkdir /data/system/gps 0771 system system
+
+    # Symlink directories to access telephony.db and preferred-apn.xml required by cbd
+    symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
+    symlink /data/user_de/0/com.android.providers.telephony/shared_prefs /data/data/com.android.providers.telephony/shared_prefs
+
+    start cpboot-daemon
 
     setprop vold.post_fs_data_done 1
 
