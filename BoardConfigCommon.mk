@@ -19,15 +19,17 @@ TARGET_ARCH := x86
 TARGET_ARCH_VARIANT := atom
 TARGET_CPU_ABI := x86
 
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-
 TARGET_BOARD_PLATFORM := clovertrail
 TARGET_BOOTLOADER_BOARD_NAME := clovertrail
 
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
 MALLOC_SVELTE := true
 
+# Legacy libraries support
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libmultidisplay.so|libshim_mds.so:/system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
 
 # Houdini
 TARGET_CPU_ABI2 := armeabi-v7a
@@ -64,21 +66,23 @@ BOARD_FLASH_BLOCK_SIZE := 1024
 # Use samsung specific code
 BOARD_VENDOR := samsung
 TARGET_POWERHAL_VARIANT := samsung
+TARGET_AUDIOHAL_VARIANT := samsung
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_santos10
 
-# Video
-ENABLE_IMG_GRAPHICS := true
-TARGET_DISABLE_CURSOR_LAYER := true
-LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libmultidisplay.so|libshim_mds.so:/system/vendor/lib/libsepdrm.so|libshim_drm.so:/system/vendor/bin/gpsd|libshim_gps.so:/system/vendor/lib/hw/camera.vendor.santos10.so|libshim_camera.so
+# OpenGL
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
-# Audio
+# Video
+TARGET_DISABLE_CURSOR_LAYER := true
+
+# Audio (HDMI)
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
-TARGET_AUDIOHAL_VARIANT := samsung
 
 # Multimedia
+ENABLE_IMG_GRAPHICS := true
 BUILD_WITH_FULL_STAGEFRIGHT := true
 BOARD_USES_WRS_OMXIL_CORE := true
 INTEL_VA := true
@@ -111,9 +115,6 @@ BOARD_USE_LEGACY_SENSORS_FUSION := true
 
 # CMHW
 BOARD_HARDWARE_CLASS += device/samsung/santos10-common/cmhw
-
-# OpenGL
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true

@@ -66,14 +66,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.clovertrail \
+    audio.hdmi.clovertrail \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.usb.default \
-    audio.hdmi.clovertrail \
+    audio.usb.default
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/etc/mixer_paths_0.xml \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/etc/mixer_paths_0.xml
 
 # Multimedia
 PRODUCT_PACKAGES += \
