@@ -21,13 +21,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := large
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
-# ART optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=174m \
-    dalvik.vm.heapmaxfree=8m
-
 # Houdini
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.dalvik.vm.native.bridge=libhoudini.so
@@ -200,6 +193,6 @@ PRODUCT_CHARACTERISTICS := tablet
 TARGET_SCREEN_WIDTH := 1280
 TARGET_SCREEN_HEIGHT := 480
 
-$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product, vendor/samsung/santos10-common/santos10-common-vendor.mk)
