@@ -5196,29 +5196,28 @@ typedef struct {
  */
 
 /**
- * Changed constants in stock:
- *   RIL_REQUEST_SIM_OPEN_CHANNEL      115 -> 10027
- *   RIL_REQUEST_SIM_CLOSE_CHANNEL     116 -> 10028
- *   RIL_REQUEST_SET_UICC_SUBSCRIPTION 122 -> 115
+ * KitKat RIL (v9)
  *
- * Different constants in stock:
- *   RIL_REQUEST_GET_DATA_CALL_PROFILE = 114
+ * Added constants in stock:
+ *   RIL_REQUEST_GET_DATA_CALL_PROFILE = 114 - not used in stock RIL.java
  *   RIL_REQUEST_SET_UICC_SUBSCRIPTION = 115
  *   RIL_REQUEST_SET_DATA_SUBSCRIPTION = 116
  *   RIL_REQUEST_GET_UICC_SUBSCRIPTION = 117
  *   RIL_REQUEST_GET_DATA_SUBSCRIPTION = 118
  *   RIL_REQUEST_SET_TRANSMIT_POWER    = 119
- *   RIL_REQUEST_SETUP_QOS             = 120
- *   RIL_REQUEST_RELEASE_QOS           = 121
- *   RIL_REQUEST_GET_QOS_STATUS        = 122
- *   RIL_REQUEST_MODIFY_QOS            = 123
- *   RIL_REQUEST_SUSPEND_QOS           = 124
- *   RIL_REQUEST_RESUME_QOS            = 125
- *   RIL_REQUEST_SYNC_AUDIO            = 126
- *   RIL_REQUEST_RESET_CP              = 127
+ *   RIL_REQUEST_SETUP_QOS             = 120 - not used in stock RIL.java
+ *   RIL_REQUEST_RELEASE_QOS           = 121 - not used in stock RIL.java
+ *   RIL_REQUEST_GET_QOS_STATUS        = 122 - not used in stock RIL.java
+ *   RIL_REQUEST_MODIFY_QOS            = 123 - not used in stock RIL.java
+ *   RIL_REQUEST_SUSPEND_QOS           = 124 - not used in stock RIL.java
+ *   RIL_REQUEST_RESUME_QOS            = 125 - not used in stock RIL.java
+ *   RIL_REQUEST_SYNC_AUDIO            = 126 - not used in stock RIL.java
+ *   RIL_REQUEST_RESET_CP              = 127 - not used in stock RIL.java
  *
- * Missing constants in stock:
- *   RIL_REQUEST_* > 127
+ * v10 existing constants added in stock:
+ *   RIL_REQUEST_SIM_OPEN_CHANNEL      115 -> 10027 - not used in stock RIL.java
+ *   RIL_REQUEST_SIM_CLOSE_CHANNEL     116 -> 10028 - not used in stock RIL.java
+ *   RIL_REQUEST_SET_UICC_SUBSCRIPTION 122 -> 115
  */
 
 #define SAMSUNG_REQUEST_BASE 10000
@@ -5913,25 +5912,26 @@ typedef struct {
 #define RIL_UNSOL_PCO_DATA 1046
 
 /**********************************************************
- * SAMSUNG RESPONSE
+ * SAMSUNG RESPONSES
  **********************************************************/
 
 /**
- * Changed constants in stock:
- *   RIL_UNSOL_UICC_SUBSCRIPTION_STATUS_CHANGED 1038 -> 11031
- *   RIL_UNSOL_ON_SS                            1043 -> 1040
- *   RIL_UNSOL_STK_CC_ALPHA_NOTIFY              1044 -> 1041
+ * KitKat RIL (v9)
  *
- * Different constants in stock:
- *   RIL_UNSOL_TETHERED_MODE_STATE_CHANGED = 1038
- *   RIL_UNSOL_DATA_NETWORK_STATE_CHANGED  = 1039
+ * Added constants in stock:
+ *   RIL_UNSOL_TETHERED_MODE_STATE_CHANGED = 1038 - not used in stock RIL.java
+ *   RIL_UNSOL_DATA_NETWORK_STATE_CHANGED  = 1039 - not used in stock RIL.java
  *   RIL_UNSOL_ON_SS                       = 1040
- *   RIL_UNSOL_STK_CC_ALPHA_NOTIFY         = 1041
- *   RIL_UNSOL_QOS_STATE_CHANGED_IND       = 1042
+ *   RIL_UNSOL_STK_CC_ALPHA_NOTIFY         = 1041 - not used in stock RIL.java
+ *   RIL_UNSOL_QOS_STATE_CHANGED_IND       = 1042 - not used in stock RIL.java
  *   RIL_UNSOL_DUN_INFO                    = 1043
  *
- * Missing constants in stock:
- *   RIL_UNSOL_* > 1043
+ * v10 existing constants added in stock:
+ *   RIL_UNSOL_UICC_SUBSCRIPTION_STATUS_CHANGED 1038 -> 11031
+ *
+ * v11 existing constants added in stock:
+ *   RIL_UNSOL_ON_SS                            1043 -> 1040
+ *   RIL_UNSOL_STK_CC_ALPHA_NOTIFY              1044 -> 1041 - not used in stock RIL.java
  */
 
 #define SAMSUNG_UNSOL_RESPONSE_BASE 11000
