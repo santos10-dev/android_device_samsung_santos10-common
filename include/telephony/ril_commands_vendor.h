@@ -15,10 +15,10 @@
 ** limitations under the License.
 */
     {SAMSUNG_REQUEST_BASE, NULL, NULL},
-    {RIL_REQUEST_SET_CELL_BROADCAST_CONFIG, dispatchVoid, responseVoid},
+    // RIL_REQUEST_SET_CELL_BROADCAST_CONFIG - not used in stock RIL.java
     {RIL_REQUEST_GET_CELL_BROADCAST_CONFIG, dispatchVoid, responseVoid},
-    {RIL_REQUEST_CRFM_LINE_SMS_COUNT_MSG, dispatchVoid, responseVoid},
-    {RIL_REQUEST_CRFM_LINE_SMS_READ_MSG, dispatchVoid, responseVoid},
+    // RIL_REQUEST_CRFM_LINE_SMS_COUNT_MSG - not used in stock RIL.java
+    // RIL_REQUEST_CRFM_LINE_SMS_READ_MSG - not used in stock RIL.java
     {RIL_REQUEST_SEND_ENCODED_USSD, dispatchVoid, responseVoid},
     {RIL_REQUEST_SET_PDA_MEMORY_STATUS, dispatchVoid, responseVoid},
     {RIL_REQUEST_GET_PHONEBOOK_STORAGE_INFO, dispatchVoid, responseVoid},
@@ -26,12 +26,12 @@
     {RIL_REQUEST_ACCESS_PHONEBOOK_ENTRY, dispatchVoid, responseVoid},
     {RIL_REQUEST_DIAL_VIDEO_CALL, dispatchVoid, responseVoid},
     {RIL_REQUEST_CALL_DEFLECTION, dispatchVoid, responseVoid},
-    {RIL_REQUEST_READ_SMS_FROM_SIM, dispatchVoid, responseVoid},
+    // RIL_REQUEST_READ_SMS_FROM_SIM - not used in stock RIL.java
     {RIL_REQUEST_USIM_PB_CAPA, dispatchVoid, responseVoid},
     {RIL_REQUEST_LOCK_INFO, dispatchVoid, responseVoid},
-    {RIL_REQUEST_SEND_MOBILE_TRACKER_SMS, dispatchVoid, responseVoid},
+    // RIL_REQUEST_SEND_MOBILE_TRACKER_SMS - not used in stock RIL.java
     {RIL_REQUEST_DIAL_EMERGENCY_CALL, dispatchVoid, responseVoid},
-    {RIL_REQUEST_GET_STOREAD_MSG_COUNT, dispatchVoid, responseVoid},
+    // RIL_REQUEST_GET_STOREAD_MSG_COUNT - not used in stock RIL.java
     {RIL_REQUEST_STK_SIM_INIT_EVENT, dispatchVoid, responseVoid},
     {RIL_REQUEST_GET_LINE_ID, dispatchVoid, responseVoid},
     {RIL_REQUEST_SET_LINE_ID, dispatchVoid, responseVoid},
@@ -40,11 +40,11 @@
     {RIL_REQUEST_GET_BARCODE_NUMBER, dispatchVoid, responseVoid},
     {RIL_REQUEST_UICC_GBA_AUTHENTICATE_BOOTSTRAP, dispatchVoid, responseVoid},
     {RIL_REQUEST_UICC_GBA_AUTHENTICATE_NAF, dispatchVoid, responseVoid},
-    {RIL_REQUEST_SIM_TRANSMIT_BASIC, dispatchVoid, responseVoid},
-    // RIL_REQUEST_SIM_OPEN_CHANNEL already defined, see ril_commands.h
-    // RIL_REQUEST_SIM_CLOSE_CHANNEL already defined, see ril_commands.h
-    {RIL_REQUEST_SIM_TRANSMIT_CHANNEL, dispatchVoid, responseVoid},
-    {RIL_REQUEST_SIM_AUTH, dispatchVoid, responseVoid},
+    // RIL_REQUEST_SIM_TRANSMIT_BASIC - not used in stock RIL.java
+    // RIL_REQUEST_SIM_OPEN_CHANNEL - not used in stock RIL.java
+    // RIL_REQUEST_SIM_CLOSE_CHANNEL - not used in stock RIL.java
+    // RIL_REQUEST_SIM_TRANSMIT_CHANNEL - not used in stock RIL.java
+    // RIL_REQUEST_SIM_AUTH - not used in stock RIL.java
     {RIL_REQUEST_MODIFY_CALL_INITIATE, dispatchVoid, responseVoid},
     {RIL_REQUEST_MODIFY_CALL_CONFIRM, dispatchVoid, responseVoid},
     {RIL_REQUEST_SAFE_MODE, dispatchVoid, responseVoid},
