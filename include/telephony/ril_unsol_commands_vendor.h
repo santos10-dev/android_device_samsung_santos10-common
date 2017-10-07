@@ -31,7 +31,7 @@
     // RIL_UNSOL_RESPONSE_NO_NETWORK_RESPONSE - not used in stock RIL.java
     // RIL_UNSOL_SIM_SMS_STORAGE_AVAILALE - not used in stock RIL.java
     {RIL_UNSOL_HSDPA_STATE_CHANGED, responseVoid, WAKE_PARTIAL},
-    {RIL_UNSOL_WB_AMR_STATE, responseVoid, WAKE_PARTIAL},
+    {RIL_UNSOL_WB_AMR_STATE, responseInts, WAKE_PARTIAL},
     {RIL_UNSOL_TWO_MIC_STATE, responseVoid, WAKE_PARTIAL},
     {RIL_UNSOL_DHA_STATE, responseVoid, WAKE_PARTIAL},
     {RIL_UNSOL_UART, responseVoid, WAKE_PARTIAL},
