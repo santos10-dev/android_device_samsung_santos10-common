@@ -26,7 +26,7 @@ on early-init
     write /sys/block/zram0/max_comp_streams 4
 
     # Swap parameters
-    write /proc/sys/vm/swappiness 15
+    write /proc/sys/vm/swappiness 30
     write /proc/sys/vm/dirty_ratio 20
     write /proc/sys/vm/dirty_background_ratio 15
     write /proc/sys/vm/vfs_cache_pressure 50
