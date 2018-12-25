@@ -4,10 +4,10 @@
     <!-- From stock -->
 
     <!-- do not change the adc & dac source of AIF2 -->
-    <ctl name="AIF2DACL Source" value="0" />
-    <ctl name="AIF2DACR Source" value="0" />
-    <ctl name="AIF2ADCL Source" value="0" />
-    <ctl name="AIF2ADCR Source" value="1" />
+    <ctl name="AIF2DACL Source" value="Left" />
+    <ctl name="AIF2DACR Source" value="Left" />
+    <ctl name="AIF2ADCL Source" value="Left" />
+    <ctl name="AIF2ADCR Source" value="Right" />
 
     <!-- general -->
     <ctl name="IN1L ZC Switch" value="0" />
@@ -94,7 +94,7 @@
     <ctl name="ADCR Mux" value="ADC" />
 
     <!-- AIF2ADCDAT to AIF3ADC mux -->
-    <ctl name="AIF3ADC Mux" value="1" />
+    <ctl name="AIF3ADC Mux" value="AIF2ADCDAT" />
 
     <!-- Default all outputs off -->
     <ctl name="HP Switch" value="0" />
@@ -123,17 +123,17 @@
     <!-- Macros -->
 
     <path name="main_speaker">
-        <ctl name="LPE IHF mixer" value="3" />
+        <ctl name="LPE IHF mixer" value="Mixed" />
         <ctl name="SPK Switch" value="1" />
     </path>
 
     <path name="main_headphones">
-        <ctl name="LPE headset mixer" value="3" />
+        <ctl name="LPE headset mixer" value="Mixed" />
         <ctl name="HP Switch" value="1" />
     </path>
 
     <path name="main_bt-sco">
-        <ctl name="AIF3ADC Mux" value="1" />
+        <ctl name="AIF3ADC Mux" value="AIF2ADCDAT" />
         <ctl name="AIF2DAC2L Mixer AIF1.1 Switch" value="1" />
         <ctl name="AIF2DAC2R Mixer AIF1.1 Switch" value="1" />
     </path>
@@ -201,7 +201,7 @@
         <!-- Gain -->
         <ctl name="AIF2DAC2L Mixer AIF2 Switch" value="0" />
         <ctl name="AIF2DAC2R Mixer AIF2 Switch" value="0" />
-        <ctl name="AIF2ADC HPF Mode" value="1" />
+        <ctl name="AIF2ADC HPF Mode" value="Voice 1" />
         <ctl name="AIF2ADC HPF Switch" value="1" />
         <ctl name="AIF1DAC1 Volume" value="96" />
         <ctl name="AIF2DAC Volume" value="96" />
@@ -233,7 +233,7 @@
         <ctl name="AIF2DAC2L Mixer AIF2 Switch" value="0" />
         <ctl name="AIF2DAC2R Mixer AIF2 Switch" value="0" />
         <ctl name="Headphone ZC Switch" value="0" />
-        <ctl name="AIF2ADC HPF Mode" value="1" />
+        <ctl name="AIF2ADC HPF Mode" value="Voice 1" />
         <ctl name="AIF2ADC HPF Switch" value="1" />
         <ctl name="AIF1DAC1 Volume" value="96" />
         <ctl name="AIF2DAC Volume" value="96" />
@@ -252,7 +252,7 @@
         <!-- Gain -->
         <ctl name="AIF2DAC2L Mixer AIF2 Switch" value="1" />
         <ctl name="AIF2DAC2R Mixer AIF2 Switch" value="1" />
-        <ctl name="AIF2ADC HPF Mode" value="1" />
+        <ctl name="AIF2ADC HPF Mode" value="Voice 1" />
         <ctl name="AIF2ADC HPF Switch" value="1" />
         <ctl name="AIF2DAC Volume" value="96" />
         <ctl name="DAC2 Volume" value="96" />
@@ -268,14 +268,14 @@
     <!-- Macros -->
 
     <path name="capture_normal">
-        <ctl name="AIF2 Mode" value="1" />
+        <ctl name="AIF2 Mode" value="Master" />
         <ctl name="DAC1L Mixer AIF2 Switch" value="0" />
         <ctl name="DAC1R Mixer AIF2 Switch" value="0" />
         <ctl name="AIF2DAC Mux" value="AIF3DACDAT" />
     </path>
 
     <path name="capture_voicecall">
-        <ctl name="AIF2 Mode" value="0" />
+        <ctl name="AIF2 Mode" value="Slave" />
         <ctl name="DAC1L Mixer AIF2 Switch" value="1" />
         <ctl name="DAC1R Mixer AIF2 Switch" value="1" />
         <ctl name="AIF2DAC Mux" value="AIF2DACDAT" />
@@ -283,27 +283,27 @@
 
     <path name="main_speaker-mic">
         <ctl name="Main Mic Switch" value="1" />
-        <ctl name="AIF1ADCL Source" value="0" />
+        <ctl name="AIF1ADCL Source" value="Left" />
         <ctl name="MIXINL IN2L Switch" value="1" />
     </path>
 
     <path name="main_headset-mic">
         <ctl name="Headset Mic Switch" value="1" />
-        <ctl name="AIF1ADCL Source" value="0" />
-        <ctl name="AIF1ADCR Source" value="0" />
+        <ctl name="AIF1ADCL Source" value="Left" />
+        <ctl name="AIF1ADCR Source" value="Left" />
         <ctl name="MIXINL IN1L Switch" value="1" />
     </path>
 
     <path name="main_bt-sco-mic">
-        <ctl name="AIF2ADC Mux" value="1" />
-        <ctl name="AIF1ADCL Source" value="0" />
-        <ctl name="AIF1ADCR Source" value="1" />
+        <ctl name="AIF2ADC Mux" value="AIF3DACDAT" />
+        <ctl name="AIF1ADCL Source" value="Left" />
+        <ctl name="AIF1ADCR Source" value="Right" />
         <ctl name="AIF1ADC1R Mixer AIF2 Switch" value="1" />
         <ctl name="AIF1ADC1L Mixer AIF2 Switch" value="1" />
     </path>
 
     <path name="gain_speaker-mic">
-        <ctl name="AIF1ADC1 HPF Mode" value="1" />
+        <ctl name="AIF1ADC1 HPF Mode" value="Voice 1" />
         <ctl name="AIF1ADC1 HPF Switch" value="1" />
         <ctl name="IN2L Volume" value="30" />
         <ctl name="MIXINL IN2L Volume" value="0" />
@@ -311,7 +311,7 @@
     </path>
 
     <path name="gain_headset-mic">
-        <ctl name="AIF1ADC1 HPF Mode" value="1" />
+        <ctl name="AIF1ADC1 HPF Mode" value="Voice 1" />
         <ctl name="AIF1ADC1 HPF Switch" value="1" />
         <ctl name="IN1L Volume" value="18" />
         <ctl name="MIXINL IN1L Volume" value="0" />
@@ -400,7 +400,7 @@
         <path name="capture_normal" />
         <path name="main_headset-mic" />
         <!-- Gain -->
-        <ctl name="AIF1ADC1 HPF Mode" value="1" />
+        <ctl name="AIF1ADC1 HPF Mode" value="Voice 1" />
         <ctl name="AIF1ADC1 HPF Switch" value="1" />
         <ctl name="IN1L Volume" value="18" />
         <ctl name="MIXINL IN1L Volume" value="0" />
@@ -411,7 +411,7 @@
         <path name="capture_normal" />
         <path name="main_speaker-mic" />
         <!-- Gain -->
-        <ctl name="AIF1ADC1 HPF Mode" value="1" />
+        <ctl name="AIF1ADC1 HPF Mode" value="Voice 1" />
         <ctl name="AIF1ADC1 HPF Switch" value="1" />
         <ctl name="IN2L Volume" value="26" />
         <ctl name="MIXINL IN2L Volume" value="0" />
@@ -422,7 +422,7 @@
         <path name="capture_normal" />
         <path name="main_speaker-mic" />
         <!-- Gain -->
-        <ctl name="AIF1ADC1 HPF Mode" value="1" />
+        <ctl name="AIF1ADC1 HPF Mode" value="Voice 1" />
         <ctl name="AIF1ADC1 HPF Switch" value="1" />
         <ctl name="IN2L Volume" value="26" />
         <ctl name="MIXINL IN2L Volume" value="0" />
