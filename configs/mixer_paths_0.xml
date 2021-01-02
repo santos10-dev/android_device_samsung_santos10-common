@@ -284,6 +284,7 @@
     <path name="main_speaker-mic">
         <ctl name="Main Mic Switch" value="1" />
         <ctl name="AIF1ADCL Source" value="Left" />
+        <ctl name="AIF1ADCR Source" value="Left" />
         <ctl name="MIXINL IN2L Switch" value="1" />
     </path>
 
